@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Pyf</string>
+    <string name="pay_yourself_first">Pay Yourself First</string>
+    <string name="new1">New</string>
+    <string name="open">Open</string>
+    <string name="open_file_icon">Open File Icon</string>
+    <string name="black_box">Black Box</string>
+    <string name="set_dates">Set Dates</string>
+    <string name="pay_day">Pay Day</string>
+    <string name="set_budget_by">Set Budget By:</string>
+    <string name="dates">Dates</string>
+    <string name="set_your_budget_period">Set Your Budget Period:</string>
+    <string name="start_date">Start Date:</string>
+    <string name="end_date">End Date:</string>
+    <string name="submit">Submit</string>
+    <string name="bar_for_title">Bar for Title</string>
+    <string name="bar_for_string_bar_for_title">Bar for @string/bar_for_title</string>
+    <string name="black_box_for_footer">Black box for footer</string>
+    <string name="app_logo">App Logo</string>
+    <string name="set_your_pay_period">Set Your Pay Period:</string>
+    <string name="date_of_latest_payment">Date of Latest Payment:</string>
+    <string name="pay_frequency">Pay Frequency:</string>
+    <string name="pyf">Pyf</string>
+    <string name="image_for_income">Image for income</string>
+    <string name="image_for_bills">Image for Bills</string>
+    <string name="image_for_taxes">Image for Taxes</string>
+    <string name="image_for_debts">Image for Debts</string>
+    <string name="tap_to_add_to_budget">Tap to Add to Budget:</string>
+    <string name="income">Income</string>
+    <string name="bills">Bills</string>
+    <string name="taxes">Taxes</string>
+    <string name="debts">Debts</string>
+    <string name="x">X</string>
+    <string name="description">Description</string>
+    <string name="amount">Amount</string>
+    <string name="done">Done</string>
+    <string name="box_for_messages">Box for messages</string>
+    <string name="balance">£ -</string>
+    <string name="billsmoney">£ -</string>
+    <string name="available_balance">Available Balance</string>
+    <string name="overview_box">Overview box</string>
+    <string name="budget">Budget</string>
+    <string name="breakdown">Breakdown</string>
+    <string name="edit">Edit</string>
+    <string name="quick_nadd">Quick\nAdd</string>
+    <string name="export_narchive">Export/\nArchive</string>
+    <string-array name="frequency_arrays">
+        <item>Weekly</item>
+        <item>Fortnightly</item>
+        <item>Monthly</item>
+    </string-array>
+</resources>

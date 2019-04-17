@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#085394"
+    android:fadingEdge="none"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/titleBarImageView"
+        android:layout_width="416sp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/bar_for_string_bar_for_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/titlebar" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="60sp"
+        android:layout_marginStart="8sp"
+        android:layout_marginEnd="8sp"
+        android:gravity="center"
+        android:text="@string/pyf"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/background_light"
+        android:textSize="40sp"
+        app:fontFamily="@font/prompt_bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/editBtn"
+        android:layout_width="115sp"
+        android:layout_height="115sp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_rounded"
+        app:layout_constraintEnd_toStartOf="@+id/newBudgetBtn"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budgetTextView" />
+
+    <ImageView
+        android:id="@+id/editImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="76sp"
+        android:contentDescription="@string/image_for_income"
+        android:elevation="3sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editBtn"
+        app:layout_constraintEnd_toEndOf="@+id/editBtn"
+        app:layout_constraintStart_toStartOf="@+id/editBtn"
+        app:layout_constraintTop_toTopOf="@+id/editBtn"
+        app:layout_constraintVertical_bias="0.32"
+        app:srcCompat="@drawable/ic_hand" />
+
+    <TextView
+        android:id="@+id/editTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8sp"
+        android:elevation="3sp"
+        android:fontFamily="@font/prompt"
+        android:text="@string/income"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/editBtn"
+        app:layout_constraintEnd_toEndOf="@+id/editBtn"
+        app:layout_constraintStart_toStartOf="@+id/editBtn"
+        app:layout_constraintTop_toBottomOf="@+id/editImageView" />
+
+    <Button
+        android:id="@+id/quickAddBtn"
+        android:layout_width="115sp"
+        android:layout_height="115sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8sp"
+        android:layout_marginBottom="8sp"
+        android:background="@drawable/button_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newFileTextView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/quickAddImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="76sp"
+        android:contentDescription="@string/image_for_debts"
+        android:elevation="3sp"
+        app:layout_constraintBottom_toBottomOf="@+id/quickAddBtn"
+        app:layout_constraintEnd_toEndOf="@+id/quickAddBtn"
+        app:layout_constraintStart_toStartOf="@+id/quickAddBtn"
+        app:layout_constraintTop_toTopOf="@+id/quickAddBtn"
+        app:layout_constraintVertical_bias="0.32"
+        app:srcCompat="@drawable/ic_debt" />
+
+    <TextView
+        android:id="@+id/debtTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8sp"
+        android:elevation="3sp"
+        android:fontFamily="@font/prompt"
+        android:text="@string/debts"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/quickAddBtn"
+        app:layout_constraintEnd_toEndOf="@+id/quickAddBtn"
+        app:layout_constraintStart_toStartOf="@+id/quickAddBtn"
+        app:layout_constraintTop_toBottomOf="@+id/quickAddImageView" />
+
+    <Button
+        android:id="@+id/exportArchiveBtn"
+        android:layout_width="115sp"
+        android:layout_height="112dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="8sp"
+        android:background="@drawable/button_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/quickAddImageView"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/exportArchiveImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="76sp"
+        android:contentDescription="@string/image_for_taxes"
+        android:elevation="3sp"
+        app:layout_constraintBottom_toBottomOf="@+id/exportArchiveBtn"
+        app:layout_constraintEnd_toEndOf="@+id/exportArchiveBtn"
+        app:layout_constraintStart_toStartOf="@+id/exportArchiveBtn"
+        app:layout_constraintTop_toTopOf="@+id/exportArchiveBtn"
+        app:layout_constraintVertical_bias="0.32"
+        app:srcCompat="@drawable/ic_tax" />
+
+    <TextView
+        android:id="@+id/taxTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8sp"
+        android:elevation="3sp"
+        android:fontFamily="@font/prompt"
+        android:text="@string/taxes"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/exportArchiveBtn"
+        app:layout_constraintEnd_toEndOf="@+id/exportArchiveBtn"
+        app:layout_constraintStart_toStartOf="@+id/exportArchiveBtn"
+        app:layout_constraintTop_toBottomOf="@+id/exportArchiveImageView" />
+
+    <Button
+        android:id="@+id/newBudgetBtn"
+        android:layout_width="115sp"
+        android:layout_height="115sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8sp"
+        android:background="@drawable/button_rounded"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budgetTextView" />
+
+    <ImageView
+        android:id="@+id/newFileImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="76sp"
+        android:contentDescription="@string/image_for_bills"
+        android:elevation="3sp"
+        app:layout_constraintBottom_toBottomOf="@+id/newBudgetBtn"
+        app:layout_constraintEnd_toEndOf="@+id/newBudgetBtn"
+        app:layout_constraintStart_toStartOf="@+id/newBudgetBtn"
+        app:layout_constraintTop_toTopOf="@+id/newBudgetBtn"
+        app:layout_constraintVertical_bias="0.32"
+        app:srcCompat="@drawable/ic_bill" />
+
+    <TextView
+        android:id="@+id/newFileTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8sp"
+        android:elevation="3sp"
+        android:fontFamily="@font/prompt"
+        android:text="@string/bills"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/newBudgetBtn"
+        app:layout_constraintEnd_toEndOf="@+id/newBudgetBtn"
+        app:layout_constraintStart_toStartOf="@+id/newBudgetBtn"
+        app:layout_constraintTop_toBottomOf="@+id/newFileImageView" />
+
+    <TextView
+        android:id="@+id/budgetTextView"
+        android:layout_width="354sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8sp"
+        android:layout_marginTop="8sp"
+        android:layout_marginEnd="8sp"
+        android:fontFamily="@font/prompt_bold"
+        android:gravity="center"
+        android:text="@string/tap_to_add_to_budget"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <Button
+        android:id="@+id/doneBtn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="109dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded"
+        android:fontFamily="@font/prompt_bold"
+        android:text="@string/done"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quickAddBtn"
+        app:layout_constraintVertical_bias="0.9" />
+
+    <ImageView
+        android:id="@+id/transactionHistoryImageView"
+        android:layout_width="0dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/box_for_messages"
+        app:layout_constraintBottom_toTopOf="@+id/doneBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exportArchiveBtn"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/msgbox" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="277dp"
+        android:layout_height="104dp"
+        android:fontFamily="@font/prompt"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/transactionHistoryImageView"
+        app:layout_constraintEnd_toEndOf="@+id/transactionHistoryImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/transactionHistoryImageView" />
+
+</android.support.constraint.ConstraintLayout>

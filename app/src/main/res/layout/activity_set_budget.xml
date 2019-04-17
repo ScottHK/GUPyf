@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#085394"
+    android:fadingEdge="none"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/titleBarImageView"
+        android:layout_width="416dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/bar_for_string_bar_for_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/titlebar" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="60sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="@string/pyf"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/background_light"
+        android:textSize="40sp"
+        app:fontFamily="@font/prompt_bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/setDatesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="3dp"
+        android:text="@string/dates"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        app:fontFamily="@font/prompt"
+        app:layout_constraintBottom_toBottomOf="@+id/editBtn"
+        app:layout_constraintEnd_toEndOf="@+id/editBtn"
+        app:layout_constraintStart_toStartOf="@+id/editBtn"
+        app:layout_constraintTop_toBottomOf="@+id/newFileIcon" />
+
+    <TextView
+        android:id="@+id/payDayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:elevation="3dp"
+        android:text="@string/pay_day"
+        android:textColor="@android:color/white"
+        android:textSize="21sp"
+        app:fontFamily="@font/prompt"
+        app:layout_constraintBottom_toBottomOf="@+id/newBudgetBtn"
+        app:layout_constraintEnd_toEndOf="@+id/newBudgetBtn"
+        app:layout_constraintStart_toStartOf="@+id/newBudgetBtn"
+        app:layout_constraintTop_toBottomOf="@+id/openFileIcon"
+        app:layout_constraintVertical_bias="0.35000002" />
+
+    <Button
+        android:id="@+id/editBtn"
+        android:layout_width="125sp"
+        android:layout_height="125sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
+        app:layout_constraintVertical_bias="0.20999998" />
+
+    <Button
+        android:id="@+id/newBudgetBtn"
+        android:layout_width="125sp"
+        android:layout_height="125sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.751"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
+        app:layout_constraintVertical_bias="0.20999998" />
+
+    <ImageView
+        android:id="@+id/newFileIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="79sp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/open_file_icon"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editBtn"
+        app:layout_constraintEnd_toEndOf="@+id/editBtn"
+        app:layout_constraintStart_toStartOf="@+id/editBtn"
+        app:layout_constraintTop_toTopOf="@+id/editBtn"
+        app:layout_constraintVertical_bias="0.060000002"
+        app:srcCompat="@drawable/ic_appointment" />
+
+    <ImageView
+        android:id="@+id/openFileIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="79sp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/open_file_icon"
+        android:elevation="3sp"
+        app:layout_constraintBottom_toTopOf="@+id/payDayTextView"
+        app:layout_constraintEnd_toEndOf="@+id/newBudgetBtn"
+        app:layout_constraintStart_toStartOf="@+id/newBudgetBtn"
+        app:layout_constraintTop_toTopOf="@+id/newBudgetBtn"
+        app:srcCompat="@drawable/ic_time_is_money" />
+
+    <TextView
+        android:id="@+id/budgetTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/prompt_bold"
+        android:text="@string/set_budget_by"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="0.0" />
+
+</android.support.constraint.ConstraintLayout>
