@@ -41,31 +41,32 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/editBtn"
+        android:id="@+id/incomeBtn"
         android:layout_width="115sp"
         android:layout_height="115sp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/button_rounded"
-        app:layout_constraintEnd_toStartOf="@+id/newBudgetBtn"
-        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintEnd_toStartOf="@+id/billsBtn"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/budgetTextView" />
 
     <ImageView
-        android:id="@+id/editImageView"
+        android:id="@+id/incomeImageView"
         android:layout_width="wrap_content"
         android:layout_height="76sp"
         android:contentDescription="@string/image_for_income"
         android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editBtn"
-        app:layout_constraintEnd_toEndOf="@+id/editBtn"
-        app:layout_constraintStart_toStartOf="@+id/editBtn"
-        app:layout_constraintTop_toTopOf="@+id/editBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/incomeBtn"
+        app:layout_constraintEnd_toEndOf="@+id/incomeBtn"
+        app:layout_constraintStart_toStartOf="@+id/incomeBtn"
+        app:layout_constraintTop_toTopOf="@+id/incomeBtn"
         app:layout_constraintVertical_bias="0.32"
         app:srcCompat="@drawable/ic_hand" />
 
     <TextView
-        android:id="@+id/editTextView"
+        android:id="@+id/incomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8sp"
@@ -73,16 +74,16 @@
         android:fontFamily="@font/prompt"
         android:text="@string/income"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/editBtn"
-        app:layout_constraintEnd_toEndOf="@+id/editBtn"
-        app:layout_constraintStart_toStartOf="@+id/editBtn"
-        app:layout_constraintTop_toBottomOf="@+id/editImageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/incomeBtn"
+        app:layout_constraintEnd_toEndOf="@+id/incomeBtn"
+        app:layout_constraintStart_toStartOf="@+id/incomeBtn"
+        app:layout_constraintTop_toBottomOf="@+id/incomeImageView" />
 
     <Button
-        android:id="@+id/quickAddBtn"
+        android:id="@+id/debtsBtn"
         android:layout_width="115sp"
         android:layout_height="115sp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8sp"
         android:layout_marginBottom="8sp"
         android:background="@drawable/button_rounded"
@@ -90,24 +91,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.753"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newFileTextView"
+        app:layout_constraintTop_toBottomOf="@+id/billsTextView"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/quickAddImageView"
+        android:id="@+id/debtsImageView"
         android:layout_width="wrap_content"
         android:layout_height="76sp"
         android:contentDescription="@string/image_for_debts"
         android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/quickAddBtn"
-        app:layout_constraintEnd_toEndOf="@+id/quickAddBtn"
-        app:layout_constraintStart_toStartOf="@+id/quickAddBtn"
-        app:layout_constraintTop_toTopOf="@+id/quickAddBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/debtsBtn"
+        app:layout_constraintEnd_toEndOf="@+id/debtsBtn"
+        app:layout_constraintStart_toStartOf="@+id/debtsBtn"
+        app:layout_constraintTop_toTopOf="@+id/debtsBtn"
         app:layout_constraintVertical_bias="0.32"
         app:srcCompat="@drawable/ic_debt" />
 
     <TextView
-        android:id="@+id/debtTextView"
+        android:id="@+id/debtsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8sp"
@@ -115,40 +116,40 @@
         android:fontFamily="@font/prompt"
         android:text="@string/debts"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/quickAddBtn"
-        app:layout_constraintEnd_toEndOf="@+id/quickAddBtn"
-        app:layout_constraintStart_toStartOf="@+id/quickAddBtn"
-        app:layout_constraintTop_toBottomOf="@+id/quickAddImageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/debtsBtn"
+        app:layout_constraintEnd_toEndOf="@+id/debtsBtn"
+        app:layout_constraintStart_toStartOf="@+id/debtsBtn"
+        app:layout_constraintTop_toBottomOf="@+id/debtsImageView" />
 
     <Button
-        android:id="@+id/exportArchiveBtn"
+        android:id="@+id/taxesBtn"
         android:layout_width="115sp"
-        android:layout_height="112dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="8sp"
+        android:layout_height="115dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/button_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/quickAddImageView"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintEnd_toStartOf="@+id/debtsBtn"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextView"
+        app:layout_constraintTop_toBottomOf="@+id/incomeTextView"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/exportArchiveImageView"
+        android:id="@+id/taxesImageView"
         android:layout_width="wrap_content"
         android:layout_height="76sp"
         android:contentDescription="@string/image_for_taxes"
         android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/exportArchiveBtn"
-        app:layout_constraintEnd_toEndOf="@+id/exportArchiveBtn"
-        app:layout_constraintStart_toStartOf="@+id/exportArchiveBtn"
-        app:layout_constraintTop_toTopOf="@+id/exportArchiveBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/taxesBtn"
+        app:layout_constraintEnd_toEndOf="@+id/taxesBtn"
+        app:layout_constraintStart_toStartOf="@+id/taxesBtn"
+        app:layout_constraintTop_toTopOf="@+id/taxesBtn"
         app:layout_constraintVertical_bias="0.32"
         app:srcCompat="@drawable/ic_tax" />
 
     <TextView
-        android:id="@+id/taxTextView"
+        android:id="@+id/taxesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8sp"
@@ -156,38 +157,41 @@
         android:fontFamily="@font/prompt"
         android:text="@string/taxes"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/exportArchiveBtn"
-        app:layout_constraintEnd_toEndOf="@+id/exportArchiveBtn"
-        app:layout_constraintStart_toStartOf="@+id/exportArchiveBtn"
-        app:layout_constraintTop_toBottomOf="@+id/exportArchiveImageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/taxesBtn"
+        app:layout_constraintEnd_toEndOf="@+id/taxesBtn"
+        app:layout_constraintStart_toStartOf="@+id/taxesBtn"
+        app:layout_constraintTop_toBottomOf="@+id/taxesImageView" />
 
     <Button
-        android:id="@+id/newBudgetBtn"
+        android:id="@+id/billsBtn"
         android:layout_width="115sp"
         android:layout_height="115sp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8sp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/button_rounded"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.753"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/budgetTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/newFileImageView"
+        android:id="@+id/billsImageView"
         android:layout_width="wrap_content"
         android:layout_height="76sp"
         android:contentDescription="@string/image_for_bills"
         android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/newBudgetBtn"
-        app:layout_constraintEnd_toEndOf="@+id/newBudgetBtn"
-        app:layout_constraintStart_toStartOf="@+id/newBudgetBtn"
-        app:layout_constraintTop_toTopOf="@+id/newBudgetBtn"
+        app:layout_constraintBottom_toBottomOf="@+id/billsBtn"
+        app:layout_constraintEnd_toEndOf="@+id/billsBtn"
+        app:layout_constraintStart_toStartOf="@+id/billsBtn"
+        app:layout_constraintTop_toTopOf="@+id/billsBtn"
         app:layout_constraintVertical_bias="0.32"
         app:srcCompat="@drawable/ic_bill" />
 
     <TextView
-        android:id="@+id/newFileTextView"
+        android:id="@+id/billsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8sp"
@@ -195,10 +199,10 @@
         android:fontFamily="@font/prompt"
         android:text="@string/bills"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/newBudgetBtn"
-        app:layout_constraintEnd_toEndOf="@+id/newBudgetBtn"
-        app:layout_constraintStart_toStartOf="@+id/newBudgetBtn"
-        app:layout_constraintTop_toBottomOf="@+id/newFileImageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/billsBtn"
+        app:layout_constraintEnd_toEndOf="@+id/billsBtn"
+        app:layout_constraintStart_toStartOf="@+id/billsBtn"
+        app:layout_constraintTop_toBottomOf="@+id/billsImageView" />
 
     <TextView
         android:id="@+id/budgetTextView"
@@ -247,7 +251,7 @@
         app:layout_constraintBottom_toTopOf="@+id/doneBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exportArchiveBtn"
+        app:layout_constraintTop_toBottomOf="@+id/taxesTextView"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/msgbox" />
 
@@ -260,7 +264,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/transactionHistoryImageView"
         app:layout_constraintEnd_toEndOf="@+id/transactionHistoryImageView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/transactionHistoryImageView"
         app:layout_constraintTop_toTopOf="@+id/transactionHistoryImageView" />
 
 </android.support.constraint.ConstraintLayout>

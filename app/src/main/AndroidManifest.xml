@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BudgetHome"></activity>
+        <activity android:name=".quickaddpopup"></activity>
+        <activity android:name=".BudgetHome" />
         <activity android:name=".budgetCreation" />
         <activity android:name=".PayPeriod" />
         <activity android:name=".BudgetPeriod" />
