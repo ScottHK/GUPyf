@@ -51,7 +51,8 @@
             app:layout_constraintEnd_toEndOf="@+id/spendBtn"
             app:layout_constraintStart_toStartOf="@+id/spendBtn"
             app:layout_constraintTop_toTopOf="@+id/spendBtn"
-            app:srcCompat="@drawable/ic_spending" />
+            app:srcCompat="@drawable/ic_spending"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/spendTextView"
