@@ -44,6 +44,15 @@
     <string name="edit">Edit</string>
     <string name="quick_nadd">Quick\nAdd</string>
     <string name="export_narchive">Export/\nArchive</string>
+    <string name="device_icon">device icon</string>
+    <string name="device">Device</string>
+    <string name="google_drive_icon">Google Drive Icon</string>
+    <string name="google_drive">Google\\nDrive</string>
+    <string name="export_archive">Export/Archive</string>
+    <string name="export_to_device_or_upload_to_google_drive">Export to Device or Upload to Google Drive:</string>
+    <string name="spend">Spend</string>
+    <string name="add_funds">Add Funds</string>
+    <string name="back_button">Back Button</string>
     <string-array name="frequency_arrays">
         <item>Weekly</item>
         <item>Fortnightly</item>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="350sp"
+    android:layout_height="350sp"
+    android:background="#085394"
+    android:padding="5sp"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/startNewBtn"
+            android:layout_width="115sp"
+            android:layout_height="115sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_rounded"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <Button
+            android:id="@+id/rollOverBtn"
+            android:layout_width="115sp"
+            android:layout_height="115sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_rounded"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <ImageView
+            android:id="@+id/deviceImageView"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/device_icon"
+            android:elevation="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/startNewBtn"
+            app:layout_constraintStart_toStartOf="@+id/startNewBtn"
+            app:layout_constraintTop_toTopOf="@+id/startNewBtn"
+            app:srcCompat="@drawable/new_file" />
+
+        <TextView
+            android:id="@+id/startNewTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="2dp"
+            android:fontFamily="@font/prompt"
+            android:text="Start New"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/startNewBtn"
+            app:layout_constraintEnd_toEndOf="@+id/startNewBtn"
+            app:layout_constraintStart_toStartOf="@+id/startNewBtn"
+            app:layout_constraintTop_toBottomOf="@+id/deviceImageView" />
+
+        <ImageView
+            android:id="@+id/googleDriveImageView"
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/google_drive_icon"
+            android:elevation="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/rollOverBtn"
+            app:layout_constraintStart_toStartOf="@+id/rollOverBtn"
+            app:layout_constraintTop_toTopOf="@+id/rollOverBtn"
+            app:srcCompat="@drawable/ic_reuse" />
+
+        <TextView
+            android:id="@+id/rollOverTextView"
+            style="prom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:elevation="3dp"
+            android:fontFamily="@font/prompt"
+            android:gravity="center"
+            android:text="Roll Over"
+            android:textColor="@android:color/white"
+            android:textColorLink="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/rollOverBtn"
+            app:layout_constraintEnd_toEndOf="@+id/rollOverBtn"
+            app:layout_constraintStart_toStartOf="@+id/rollOverBtn"
+            app:layout_constraintTop_toBottomOf="@+id/googleDriveImageView" />
+
+        <TextView
+            android:id="@+id/startNewExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/prompt"
+            android:text="@string/x"
+            android:textColor="@android:color/white"
+            android:textColorLink="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/startNewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/prompt_bold"
+            android:text="Start New"
+            android:textColor="@android:color/white"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.110000014" />
+
+        <TextView
+            android:id="@+id/startNewDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/prompt"
+            android:text="Start new or reuse budget:"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startNewTitle"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

@@ -13,7 +13,7 @@ public class SetBudget extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_budget);
 
-        Button datesBtn = (Button) findViewById(R.id.editBtn);
+        Button datesBtn = (Button) findViewById(R.id.datesBtn);
         datesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -22,5 +22,15 @@ public class SetBudget extends AppCompatActivity {
                 startActivity(datesIntent);
             }
         });
+
+        Button payDayButton = (Button) findViewById(R.id.payDayBtn);
+        payDayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent payDayIntent = new Intent(getApplicationContext(), PayPeriod.class);
+
+                startActivity(payDayIntent);
+            }
+        });
+        }
     }
-}
