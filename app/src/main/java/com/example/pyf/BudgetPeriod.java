@@ -23,6 +23,7 @@ public class BudgetPeriod extends AppCompatActivity {
     private EditText mEndDate;
     private DatePickerDialog.OnDateSetListener mStartDateSetListener;
     private DatePickerDialog.OnDateSetListener mEndDateSetListener;
+    private String dateSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,7 @@ public class BudgetPeriod extends AppCompatActivity {
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
                 String date = dayOfMonth + "/" + month + "/" + year;
+                dateSet = dayOfMonth + "-" + month + "-" + year;
                 mStartDate.setText(date);
             }
         };
@@ -89,7 +91,7 @@ public class BudgetPeriod extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent submitIntent = new Intent(getApplicationContext(), budgetCreation.class);
-                //passing information to new activity
+                submitIntent.putExtra("date", dateSet);
                 startActivity(submitIntent);
             }
         });
