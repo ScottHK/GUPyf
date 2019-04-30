@@ -14,6 +14,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button newBudgetBtn = (Button) findViewById(R.id.newBudgetBtn);
+        Button openFile = findViewById(R.id.openFileBtn);
+
+        openFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent openFileIntent = new Intent(getApplicationContext(), fileList.class);
+                startActivity(openFileIntent);
+            }
+        });
         newBudgetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,51 +1,46 @@
 package com.example.pyf;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.opencsv.CSVWriter;
+public class EditBudget extends AppCompatActivity {
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.regex.Pattern;
-
-public class budgetCreation extends AppCompatActivity {
     Dialog myDialog;
     TextView actionLog;
     String fileLog = "";
     boolean editCheck = false;
     String fileName;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_budget_creation);
-        fileName = getIntent().getStringExtra("date")+ ".txt";
-        actionLog = findViewById(R.id.actionLogTextView);
+        setContentView(R.layout.activity_edit_budget);
+
+        fileName = getIntent().getStringExtra("fileName");
+        actionLog = findViewById(R.id.editactionLogTextView);
         actionLog.setMovementMethod(new ScrollingMovementMethod());
         myDialog = new Dialog(this);
         final SaveFile save = new SaveFile();
+        final loadFile load = new loadFile();
 
-        Button donebtn = findViewById(R.id.doneBtn);
-        Button incomeDetails = findViewById(R.id.incomeBtn);
-        Button billsDetails = findViewById(R.id.billsBtn);
-        Button taxesDetails = findViewById(R.id.taxesBtn);
-        Button debtsDetails = findViewById(R.id.debtsBtn);
+        Button donebtn = findViewById(R.id.editdoneBtn);
+        Button incomeDetails = findViewById(R.id.editincomeBtn);
+        Button billsDetails = findViewById(R.id.editbillsBtn);
+        Button taxesDetails = findViewById(R.id.edittaxesBtn);
+        Button debtsDetails = findViewById(R.id.editdebtsBtn);
 
+        fileLog = load.FileLoader(fileName, null, getApplicationContext());
+        Toast toast = Toast.makeText(getApplicationContext(), fileLog, Toast.LENGTH_LONG);
+        toast.show();
 
         incomeDetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,8 +51,10 @@ public class budgetCreation extends AppCompatActivity {
                 myDialog.setContentView(R.layout.custompopup);
                 final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
                 final EditText amountET = myDialog.findViewById(R.id.amountEditText);
-                txtclose = (TextView) myDialog.findViewById(R.id.exit);
-                submitBtnPop = (Button) myDialog.findViewById(R.id.submitBtnPop);
+                txtclose = myDialog.findViewById(R.id.exit);
+                submitBtnPop = myDialog.findViewById(R.id.submitBtnPop);
+                Toast toast = Toast.makeText(getApplicationContext(), fileLog, Toast.LENGTH_LONG);
+                toast.show();
                 txtclose.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -75,6 +72,8 @@ public class budgetCreation extends AppCompatActivity {
                         if(!editCheck) {
                             editCheck = true;
                         }
+                        Toast toast = Toast.makeText(getApplicationContext(), fileLog, Toast.LENGTH_LONG);
+                        toast.show();
                         myDialog.dismiss();
                     }
                 });
@@ -92,8 +91,8 @@ public class budgetCreation extends AppCompatActivity {
                 myDialog.setContentView(R.layout.custompopup);
                 final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
                 final EditText amountET = myDialog.findViewById(R.id.amountEditText);
-                txtclose = (TextView) myDialog.findViewById(R.id.exit);
-                submitBtnPop = (Button) myDialog.findViewById(R.id.submitBtnPop);
+                txtclose = myDialog.findViewById(R.id.exit);
+                submitBtnPop = myDialog.findViewById(R.id.submitBtnPop);
                 txtclose.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -165,8 +164,8 @@ public class budgetCreation extends AppCompatActivity {
                 myDialog.setContentView(R.layout.custompopup);
                 final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
                 final EditText amountET = myDialog.findViewById(R.id.amountEditText);
-                txtclose = (TextView) myDialog.findViewById(R.id.exit);
-                submitBtnPop = (Button) myDialog.findViewById(R.id.submitBtnPop);
+                txtclose = myDialog.findViewById(R.id.exit);
+                submitBtnPop = myDialog.findViewById(R.id.submitBtnPop);
                 txtclose.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -199,7 +198,6 @@ public class budgetCreation extends AppCompatActivity {
 
                     save.saveFile(getApplicationContext(), fileName, null, fileLog, false);
 
-                    doneIntent.putExtra("editDetails", fileLog);
                     doneIntent.putExtra("fileName", fileName);
                     Toast toast = Toast.makeText(getApplicationContext(), fileLog, Toast.LENGTH_LONG);
                     toast.show();
@@ -207,13 +205,11 @@ public class budgetCreation extends AppCompatActivity {
 
                 } else {
                     Toast toasst = Toast.makeText(getApplicationContext(), "File has not been" +
-                            "updated: No changes specified.", Toast.LENGTH_SHORT);
+                            "updated: No changes specified.", Toast.LENGTH_LONG);
                     toasst.show();
                     startActivity(doneIntent);
                 }
             }
         });
-
     }
-
 }

@@ -46,8 +46,29 @@
         android:id="@+id/imageView"
         android:layout_width="36dp"
         android:layout_height="38dp"
-        app:srcCompat="@drawable/ic_left_arrow"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="159dp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBarImageView"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_left_arrow" />
+
+    <ListView
+        android:id="@+id/lv_Files"
+        android:layout_width="395dp"
+        android:layout_height="608dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </android.support.constraint.ConstraintLayout>

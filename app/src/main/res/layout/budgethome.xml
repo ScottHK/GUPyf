@@ -8,285 +8,36 @@
     android:fadingEdge="none"
     tools:context=".BudgetHome">
 
-    <Button
-        android:id="@+id/breakdownBtn"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/button_rounded_dark"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/overviewBoxImageView"
-        app:layout_constraintTop_toTopOf="@+id/overviewBoxImageView"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/incomeTextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="@string/breakdown"
-        android:textColor="@android:color/white"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/breakdownBtn"
-        app:layout_constraintEnd_toEndOf="@+id/breakdownBtn"
-        app:layout_constraintStart_toStartOf="@+id/breakdownBtn"
-        app:layout_constraintTop_toBottomOf="@+id/breakdownImageView" />
-
-    <ImageView
-        android:id="@+id/breakdownImageView"
-        android:layout_width="102dp"
-        android:layout_height="55sp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/image_for_income"
-        android:elevation="3sp"
-        app:layout_constraintEnd_toEndOf="@+id/breakdownBtn"
-        app:layout_constraintStart_toStartOf="@+id/breakdownBtn"
-        app:layout_constraintTop_toTopOf="@+id/breakdownBtn"
-        app:srcCompat="@drawable/ic_breakdown" />
-
-    <ImageView
-        android:id="@+id/titleBarImageView"
-        android:layout_width="416sp"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/bar_for_string_bar_for_title"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/titlebar" />
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="60sp"
-        android:layout_marginStart="8sp"
-        android:layout_marginEnd="8sp"
-        android:gravity="center"
-        android:text="@string/pyf"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@android:color/background_light"
-        android:textSize="40sp"
-        app:fontFamily="@font/prompt_bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/editBtn"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toTopOf="@+id/transactionHistoryImageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/overviewBoxImageView" />
-
-    <ImageView
-        android:id="@+id/editImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="60sp"
-        android:contentDescription="@string/image_for_income"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editBtn"
-        app:layout_constraintEnd_toEndOf="@+id/editBtn"
-        app:layout_constraintStart_toStartOf="@+id/editBtn"
-        app:layout_constraintTop_toTopOf="@+id/editBtn"
-        app:layout_constraintVertical_bias="0.32"
-        app:srcCompat="@drawable/ic_edit" />
-
-    <TextView
-        android:id="@+id/editTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8sp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="@string/edit"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/editBtn"
-        app:layout_constraintEnd_toEndOf="@+id/editBtn"
-        app:layout_constraintStart_toStartOf="@+id/editBtn"
-        app:layout_constraintTop_toBottomOf="@+id/editImageView" />
-
-    <Button
-        android:id="@+id/quickAddBtn"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toTopOf="@+id/transactionHistoryImageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/overviewBoxImageView" />
-
-    <ImageView
-        android:id="@+id/quickAddImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="45sp"
-        android:contentDescription="@string/image_for_debts"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/quickAddBtn"
-        app:layout_constraintEnd_toEndOf="@+id/quickAddBtn"
-        app:layout_constraintStart_toStartOf="@+id/quickAddBtn"
-        app:layout_constraintTop_toTopOf="@+id/quickAddBtn"
-        app:layout_constraintVertical_bias="0.23000002"
-        app:srcCompat="@drawable/ic_plus" />
-
-    <TextView
-        android:id="@+id/quickAddTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8sp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:gravity="center"
-        android:text="@string/quick_nadd"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/quickAddBtn"
-        app:layout_constraintEnd_toEndOf="@+id/quickAddBtn"
-        app:layout_constraintStart_toStartOf="@+id/quickAddBtn"
-        app:layout_constraintTop_toBottomOf="@+id/quickAddImageView" />
-
-    <Button
-        android:id="@+id/exportArchiveBtn"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toTopOf="@+id/transactionHistoryImageView"
-        app:layout_constraintStart_toEndOf="@+id/editBtn"
-        app:layout_constraintTop_toBottomOf="@+id/overviewBoxImageView" />
-
-    <ImageView
-        android:id="@+id/exportArchiveImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="40sp"
-        android:contentDescription="@string/image_for_taxes"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/exportArchiveBtn"
-        app:layout_constraintEnd_toEndOf="@+id/exportArchiveBtn"
-        app:layout_constraintStart_toStartOf="@+id/exportArchiveBtn"
-        app:layout_constraintTop_toTopOf="@+id/exportArchiveBtn"
-        app:layout_constraintVertical_bias="0.17000002"
-        app:srcCompat="@drawable/ic_archive" />
-
-    <TextView
-        android:id="@+id/exportArchiveTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8sp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:gravity="center"
-        android:text="@string/export_narchive"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/exportArchiveBtn"
-        app:layout_constraintEnd_toEndOf="@+id/exportArchiveBtn"
-        app:layout_constraintStart_toStartOf="@+id/exportArchiveBtn"
-        app:layout_constraintTop_toBottomOf="@+id/exportArchiveImageView" />
-
-    <Button
-        android:id="@+id/newFileBtn"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toTopOf="@+id/transactionHistoryImageView"
-        app:layout_constraintEnd_toStartOf="@+id/quickAddBtn"
-        app:layout_constraintTop_toBottomOf="@+id/overviewBoxImageView" />
-
-    <ImageView
-        android:id="@+id/newFileImageView"
-        android:layout_width="96dp"
-        android:layout_height="60sp"
-        android:layout_marginTop="10dp"
-        android:contentDescription="@string/image_for_bills"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/newFileBtn"
-        app:layout_constraintEnd_toEndOf="@+id/newFileBtn"
-        app:layout_constraintEnd_toStartOf="@+id/quickAddBtn"
-        app:layout_constraintStart_toStartOf="@+id/newFileBtn"
-        app:layout_constraintTop_toTopOf="@+id/newFileBtn"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/new_file" />
-
-    <TextView
-        android:id="@+id/newFileTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="5dp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="@string/new1"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/newFileBtn"
-        app:layout_constraintEnd_toStartOf="@+id/quickAddBtn"
-        app:layout_constraintStart_toStartOf="@+id/newFileBtn"
-        app:layout_constraintTop_toBottomOf="@+id/newFileImageView" />
-
     <TextView
         android:id="@+id/budgetTextView"
         android:layout_width="354sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8sp"
-        android:layout_marginTop="8sp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8sp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/prompt_bold"
         android:gravity="center"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="@string/budget"
         android:textColor="@android:color/white"
         android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
-
-    <ImageView
-        android:id="@+id/transactionHistoryImageView"
-        android:layout_width="0dp"
-        android:layout_height="147dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="@string/box_for_messages"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/msgbox" />
-
-    <TextView
-        android:id="@+id/transactionHistoryTextView"
-        android:layout_width="349dp"
-        android:layout_height="123dp"
-        android:fontFamily="@font/prompt"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/transactionHistoryImageView"
-        app:layout_constraintEnd_toEndOf="@+id/transactionHistoryImageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/transactionHistoryImageView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/overviewBoxImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:contentDescription="@string/overview_box"
-        app:layout_constraintBottom_toTopOf="@+id/transactionHistoryImageView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
@@ -470,5 +221,199 @@
         app:layout_constraintStart_toStartOf="@+id/overviewBoxImageView"
         app:layout_constraintTop_toBottomOf="@+id/balanceMoneyTextView"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/transactionHistoryTextView"
+        android:layout_width="349dp"
+        android:layout_height="123dp"
+        android:elevation="3dp"
+        android:fontFamily="@font/prompt"
+        android:scrollbars="vertical"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/transactionHistoryImageView"
+        app:layout_constraintEnd_toEndOf="@+id/transactionHistoryImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/transactionHistoryImageView" />
+
+    <ImageView
+        android:id="@+id/transactionHistoryImageView"
+        android:layout_width="0dp"
+        android:layout_height="147dp"
+        android:contentDescription="@string/box_for_messages"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editLayout"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/msgbox" />
+
+    <LinearLayout
+        android:id="@+id/editLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/overviewBoxImageView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/btn_edit"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_edit"
+            android:paddingTop="5dp" />
+
+        <TextView
+            android:id="@+id/tv_edit"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/prompt_bold"
+            android:gravity="center"
+            android:text="Edit"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/archiveLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editLayout"
+        app:layout_constraintTop_toBottomOf="@+id/overviewBoxImageView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/btn_archive"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_archive"
+            android:paddingTop="5dp" />
+
+        <TextView
+            android:id="@+id/tv_Archive"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/prompt_bold"
+            android:gravity="center"
+            android:text="Export"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/newLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/quickLayout"
+        app:layout_constraintTop_toBottomOf="@+id/overviewBoxImageView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/btn_New"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/new_file"
+            android:paddingTop="5dp" />
+
+        <TextView
+            android:id="@+id/tv_New"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/prompt_bold"
+            android:gravity="center"
+            android:text="@string/new1"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/quickLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/overviewBoxImageView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/btn_Quick"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_plus"
+            android:paddingTop="5dp" />
+
+        <TextView
+            android:id="@+id/tv_Quick"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/prompt_bold"
+            android:gravity="center"
+            android:text="Q. Add"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/breakdownLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/button_rounded_dark"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
+        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="@+id/overviewBoxImageView"
+        app:layout_constraintTop_toTopOf="@+id/overviewBoxImageView"
+        app:layout_constraintVertical_bias="0.9">
+
+        <ImageButton
+            android:id="@+id/btn_Breakdown"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/ic_breakdown"
+            android:paddingTop="5dp" />
+
+        <TextView
+            android:id="@+id/tv_Breakdown"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/prompt_bold"
+            android:gravity="center"
+            android:text="Report"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
