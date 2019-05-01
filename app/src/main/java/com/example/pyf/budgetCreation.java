@@ -27,6 +27,7 @@ public class budgetCreation extends AppCompatActivity {
     TextView actionLog;
     String fileLog = "";
     boolean editCheck = false;
+    boolean isBudgetPeriod;
     String fileName;
 
 
@@ -39,6 +40,10 @@ public class budgetCreation extends AppCompatActivity {
         actionLog.setMovementMethod(new ScrollingMovementMethod());
         myDialog = new Dialog(this);
         final SaveFile save = new SaveFile();
+
+        if(getIntent().getBooleanExtra("isBudgetPeriod", false)) {
+            isBudgetPeriod = true;
+        }
 
         Button donebtn = findViewById(R.id.doneBtn);
         Button incomeDetails = findViewById(R.id.incomeBtn);
@@ -71,7 +76,7 @@ public class budgetCreation extends AppCompatActivity {
                         String amount = amountET.getText().toString();
                         String string = category + ": " + description + " - £" + amount + "\n";
                         actionLog.append(string);
-                        fileLog += category + " " + description + " " + amount + "\n";
+                        fileLog += category + "/" + description + "/" + amount + "\n";
                         if(!editCheck) {
                             editCheck = true;
                         }
@@ -107,7 +112,7 @@ public class budgetCreation extends AppCompatActivity {
                         String amount = amountET.getText().toString();
                         String string = category + ": " + description + " - £" + amount + "\n";
                         actionLog.append(string);
-                        fileLog += category + " " + description + " " + amount + "\n";
+                        fileLog += category + "/" + description + "/" + amount + "\n";
                         if(!editCheck) {
                             editCheck = true;
                         }
@@ -144,7 +149,7 @@ public class budgetCreation extends AppCompatActivity {
                         String amount = amountET.getText().toString();
                         String string = category + ": " + description + " - £" + amount + "\n";
                         actionLog.append(string);
-                        fileLog += category + " " + description + " " + amount + "\n";
+                        fileLog += category + "/" + description + "/" + amount + "\n";
                         if(!editCheck) {
                             editCheck = true;
                         }
@@ -180,7 +185,7 @@ public class budgetCreation extends AppCompatActivity {
                         String amount = amountET.getText().toString();
                         String string = category + ": " + description + " - £" + amount + "\n";
                         actionLog.append(string);
-                        fileLog += category + " " + description + " " + amount + "\n";
+                        fileLog += category + "/" + description + "/" + amount + "\n";
                         if(!editCheck) {
                             editCheck = true;
                         }
@@ -199,8 +204,10 @@ public class budgetCreation extends AppCompatActivity {
 
                     save.saveFile(getApplicationContext(), fileName, null, fileLog, false);
 
-                    doneIntent.putExtra("editDetails", fileLog);
                     doneIntent.putExtra("fileName", fileName);
+                    if(isBudgetPeriod){
+                        doneIntent.putExtra("isBudgetPeriod", true);
+                    }
                     Toast toast = Toast.makeText(getApplicationContext(), fileLog, Toast.LENGTH_LONG);
                     toast.show();
                     startActivity(doneIntent);

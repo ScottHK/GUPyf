@@ -36,22 +36,6 @@ public class fileList extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selected = (String) parent.getItemAtPosition(position);
 
-                /*ArrayList<String> records = new ArrayList<>();
-                try (BufferedReader br = new BufferedReader(new FileReader(selected))) {
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        String[] values = line.split("/");
-                        records.addAll(Arrays.asList(values));
-                    }
-                }catch (FileNotFoundException e) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "File name " +
-                            selected + " does not exist!", Toast.LENGTH_SHORT);
-                    toast.show();
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }*/
-
                 Intent openFile = new Intent(getApplicationContext(), BudgetHome.class);
                 openFile.putExtra("fileName", selected);
                 Toast toast = Toast.makeText(getApplicationContext(), selected, Toast.LENGTH_SHORT);

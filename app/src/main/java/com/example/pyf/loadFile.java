@@ -30,7 +30,7 @@ public class loadFile {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            sb.append(line);
+            sb.append(line + "\n");
         }
         if(textview != null) {
             textview.append(sb.toString());

@@ -68,7 +68,7 @@ public class EditBudget extends AppCompatActivity {
                         String amount = amountET.getText().toString();
                         String string = category + ": " + description + " - £" + amount + "\n";
                         actionLog.append(string);
-                        fileLog += category + " " + description + " " + amount + "\n";
+                        fileLog += category + "/" + description + "/" + amount + "\n";
                         if(!editCheck) {
                             editCheck = true;
                         }
@@ -106,7 +106,7 @@ public class EditBudget extends AppCompatActivity {
                         String amount = amountET.getText().toString();
                         String string = category + ": " + description + " - £" + amount + "\n";
                         actionLog.append(string);
-                        fileLog += category + " " + description + " " + amount + "\n";
+                        fileLog += category + "/" + description + "/" + amount + "\n";
                         if(!editCheck) {
                             editCheck = true;
                         }
@@ -143,7 +143,7 @@ public class EditBudget extends AppCompatActivity {
                         String amount = amountET.getText().toString();
                         String string = category + ": " + description + " - £" + amount + "\n";
                         actionLog.append(string);
-                        fileLog += category + " " + description + " " + amount + "\n";
+                        fileLog += category + "/" + description + "/" + amount + "\n";
                         if(!editCheck) {
                             editCheck = true;
                         }
@@ -179,7 +179,7 @@ public class EditBudget extends AppCompatActivity {
                         String amount = amountET.getText().toString();
                         String string = category + ": " + description + " - £" + amount + "\n";
                         actionLog.append(string);
-                        fileLog += category + " " + description + " " + amount + "\n";
+                        fileLog += category + "/" + description + "/" + amount + "\n";
                         if(!editCheck) {
                             editCheck = true;
                         }

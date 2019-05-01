@@ -5,23 +5,25 @@ import android.support.annotation.Nullable;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class SaveFile {
 
-    public void saveFile(Context context, String fileName, @Nullable TextView string, @Nullable String string2, boolean append) {
+    public void saveFile(Context context, String fileName, @Nullable TextView textView, @Nullable String string2, boolean append) {
         File file = new File(context.getFilesDir(), fileName);
 
         //details = new String[arrayCounter];
         //Creating a filewriter object
         try {
-            FileWriter writer = new FileWriter(file, append);
+            FileWriter fw = new FileWriter(file, append);
+            BufferedWriter writer = new BufferedWriter(fw);
 
-            if(string != null) {
-                writer.write(System.getProperty("line.separator"));
-                writer.write(string.getText().toString());
+
+            if(textView != null) {
+                writer.write(textView.getText().toString());
             } else if(string2 != null){
                 writer.write(string2);
             } else {
