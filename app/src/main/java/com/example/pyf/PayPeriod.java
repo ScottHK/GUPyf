@@ -25,6 +25,9 @@ public class PayPeriod extends AppCompatActivity implements AdapterView.OnItemSe
     private EditText mStartDate;
     private DatePickerDialog.OnDateSetListener mStartDateSetListener;
     String dateSet;
+    boolean itemSelected = false;
+    String details;
+    SaveFile save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +36,40 @@ public class PayPeriod extends AppCompatActivity implements AdapterView.OnItemSe
 
         Button submitbtn = findViewById(R.id.submitBtn);
 
+        if(getIntent().getStringExtra("fileName") != null){
+            mStartDate.setText(getIntent().getStringExtra("fileName"));
+            dateSet = getIntent().getStringExtra("fileName");
+            details = getIntent().getStringExtra("details");
+            save = new SaveFile();
+        }
+
         submitbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nextlayout = new Intent(getApplicationContext(), budgetCreation.class);
-                //TODO Passing Information
-                startActivity(nextlayout);
+                if(itemSelected) {
+                    if(getIntent().getStringExtra("fileName") != null) {
+                        Intent rollOverIntent = new Intent(getApplicationContext(),
+                                BudgetHome.class);
+                        save.saveFile(getApplicationContext(), dateSet, null, details,
+                                false);
+                        rollOverIntent.putExtra("fileName", dateSet);
+                        startActivity(rollOverIntent);
+                    } else {
+                        Intent nextlayout = new Intent(getApplicationContext(),
+                                budgetCreation.class);
+                        nextlayout.putExtra("fileName", dateSet);
+                        startActivity(nextlayout);
+                    }
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Please select a choice from below (Weekly, Fortnightly or " +
+                                    "Monthly",
+                            Toast.LENGTH_LONG);
+                }
             }
         });
 
-        mStartDate = (EditText) findViewById(R.id.latestPaymentDatePlainText);
+        mStartDate = findViewById(R.id.latestPaymentDatePlainText);
 
         spinner = findViewById(R.id.spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -91,11 +118,22 @@ public class PayPeriod extends AppCompatActivity implements AdapterView.OnItemSe
 
         if(selected == "Weekly") {
             String newEndDate = dCalc.calculateDate(7, dateSet).substring(0,10);
+            dateSet = (dateSet + "~" + newEndDate + "~PP") + ".txt";
+            itemSelected = true;
             Log.d("newEndDate", newEndDate);
         } else if(selected == "Fortnightly") {
             String newEndDate = dCalc.calculateDate(14, dateSet).substring(0,10);
-        } else {
+            dateSet = (dateSet + "~" + newEndDate + "~PP") + ".txt";
+            itemSelected = true;
+            Log.d("newEndDate", newEndDate);
+        } else if(selected == "Monthly") {
             String newEndDate = dCalc.calculateDate(30, dateSet).substring(0,10);
+            dateSet = (dateSet + "~" + newEndDate + "~PP") + ".txt";
+            itemSelected = true;
+            Log.d("newEndDate", newEndDate);
+        } else {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Invalid choice: Please choose a frequency", Toast.LENGTH_SHORT);
         }
     }
 

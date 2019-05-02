@@ -54,6 +54,7 @@
     <string name="add_funds">Add Funds</string>
     <string name="back_button">Back Button</string>
     <string-array name="frequency_arrays">
+        <item>Please Choose...</item>
         <item>Weekly</item>
         <item>Fortnightly</item>
         <item>Monthly</item>

@@ -32,8 +32,8 @@ public class BudgetPeriod extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget_period);
-        mStartDate = (EditText) findViewById(R.id.startDatePlainText);
-        mEndDate = (EditText) findViewById(R.id.endDatePlainText);
+        mStartDate = findViewById(R.id.startDatePlainText);
+        mEndDate = findViewById(R.id.endDatePlainText);
 
         if(getIntent().getStringExtra("fileName") != null){
             mStartDate.setText(getIntent().getStringExtra("fileName"));
@@ -106,14 +106,15 @@ public class BudgetPeriod extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent submitIntent = new Intent(getApplicationContext(), budgetCreation.class);
-                Intent rollOverIntent = new Intent(getApplicationContext(), BudgetHome.class);
-                dateSet = (dateSet + "~" + dateEnd) + ".txt";
+
+                dateSet = (dateSet + "~" + dateEnd + "~BP") + ".txt";
                 if(getIntent().getStringExtra("fileName") != null) {
+                    Intent rollOverIntent = new Intent(getApplicationContext(), BudgetHome.class);
                     save.saveFile(getApplicationContext(), dateSet, null, details, false);
                     rollOverIntent.putExtra("fileName", dateSet);
                     startActivity(rollOverIntent);
                 } else {
+                    Intent submitIntent = new Intent(getApplicationContext(), budgetCreation.class);
                     submitIntent.putExtra("date", dateSet);
                     submitIntent.putExtra("isBudgetPeriod", true);
                     startActivity(submitIntent);

@@ -175,19 +175,27 @@ public class BudgetHome extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         dateCalculator dCalc = new dateCalculator();
+                        RollOverCleaner cleaner = new RollOverCleaner();
                         Intent rollIntent = new Intent(getApplicationContext(), BudgetPeriod.class);
                         saveMethod.saveFile(getApplicationContext(), fileName, null, details, false);
                         String[] dateparts = fileName.split("~");
-                        String date1 = dateparts[0];
-                        String date2 = dateparts[1].replace(".txt", "");
-                        int dayDifference = dCalc.calculateDays(date1, date2);
-                        Log.d("dayDifference", Integer.toString(dayDifference));
+                        if(dateparts[2].contains("BP")) {
+                            String date1 = dateparts[0];
+                            String date2 = dateparts[1];
+                            int dayDifference = dCalc.calculateDays(date1, date2);
+                            Log.d("dayDifference", Integer.toString(dayDifference));
 
-                        String newEndDate = dCalc.calculateDate(dayDifference, date2).substring(0,10);
-                        Log.d("newEndDate", newEndDate);
+                            String newEndDate = dCalc.calculateDate(dayDifference, date2).substring(0, 10);
+                            Log.d("newEndDate", newEndDate);
 
-                        rollIntent.putExtra("fileName", date2);
-                        rollIntent.putExtra("newEndDate", newEndDate);
+                            rollIntent.putExtra("newEndDate", newEndDate);
+                            rollIntent.putExtra("fileName", date2);
+                        } else if(dateparts[2].contains("PP")) {
+                            String date2 = dateparts[1];
+
+                            rollIntent.putExtra("fileName", date2);
+                        }
+                        cleaner.Cleaner(details);
                         rollIntent.putExtra("details", details);
 
                         startActivity(rollIntent);
