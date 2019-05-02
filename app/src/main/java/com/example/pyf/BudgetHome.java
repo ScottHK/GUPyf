@@ -37,7 +37,7 @@ public class BudgetHome extends AppCompatActivity {
     int leisureMoney;
     int balanceMoney;
     int additionalMoney;
-    boolean isBudgetPeriod = false;
+    int subscriptionMoney;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +49,6 @@ public class BudgetHome extends AppCompatActivity {
 
         final SaveFile saveMethod = new SaveFile();
         final loadFile loadMethod = new loadFile();
-        if(getIntent().getBooleanExtra("isBudgetPeriod", false)) {
-            isBudgetPeriod = true;
-        }
 
         ImageButton editbtn = findViewById(R.id.btn_edit);
         ImageButton exportbtn = findViewById(R.id.btn_archive);
@@ -67,12 +64,13 @@ public class BudgetHome extends AppCompatActivity {
         final TextView balance = findViewById(R.id.balanceMoneyTextView);
         final TextView leisure = findViewById(R.id.tv_leisureMoney);
         final TextView additional = findViewById(R.id.additionalMoneyTextView);
+        final TextView subscription = findViewById(R.id.tv_SubscriptionMoney);
 
         myDialog = new Dialog(this);
 
         details = loadMethod.FileLoader(fileName, null , getApplicationContext());
 
-        overviewGenerate(income, bills, taxes, debts, leisure, balance, additional);
+        overviewGenerate(income, bills, taxes, debts, leisure, balance, additional, subscription);
 
 
         transaction.setMovementMethod(new ScrollingMovementMethod());
@@ -241,7 +239,7 @@ public class BudgetHome extends AppCompatActivity {
                                 String string = description + ": -£" + amount + "\n";
                                 transaction.append(string);
                                 details += category + "/" + description + "/" + amount + "\n";
-                                overviewGenerate(income, bills, taxes, debts, leisure, balance, additional);
+                                overviewGenerate(income, bills, taxes, debts, leisure, balance, additional, subscription);
                                 saveMethod.saveFile(getApplicationContext(), fileName, null, details, false);
                                 myDialog.dismiss();
                             }
@@ -275,7 +273,7 @@ public class BudgetHome extends AppCompatActivity {
                                 String string = description + ": +£" + amount + "\n";
                                 transaction.append(string);
                                 details += category + "/" + description + "/" + amount + "\n";
-                                overviewGenerate(income, bills, taxes, debts, leisure, balance, additional);
+                                overviewGenerate(income, bills, taxes, debts, leisure, balance, additional, subscription);
                                 saveMethod.saveFile(getApplicationContext(), fileName, null, details, false);
                                 myDialog.dismiss();
                             }
@@ -295,7 +293,7 @@ public class BudgetHome extends AppCompatActivity {
         });
     }
 
-    public void overviewGenerate(TextView income, TextView bills, TextView taxes, TextView debts, TextView leisure, TextView balance, TextView additional) {
+    public void overviewGenerate(TextView income, TextView bills, TextView taxes, TextView debts, TextView leisure, TextView balance, TextView additional, TextView subscription) {
 
         incomeMoney = 0;
         billsMoney = 0;
@@ -304,6 +302,8 @@ public class BudgetHome extends AppCompatActivity {
         balanceMoney = 0;
         leisureMoney = 0;
         additionalMoney = 0;
+        subscriptionMoney = 0;
+
 
         String[] detailsArr = details.split("\n");
         int detailsLength = detailsArr.length;
@@ -325,6 +325,9 @@ public class BudgetHome extends AppCompatActivity {
             } else if (stringSplitter[0].contains("Fund")) {
                 Log.d("stringSplit", stringSplitter[0]);
                 additionalMoney += Integer.parseInt(stringSplitter[2]);
+            } else if (stringSplitter[0].contains("Subscription")) {
+                Log.d("stringSplit", stringSplitter[0]);
+                subscriptionMoney += Integer.parseInt(stringSplitter[2]);
             }
         }
 
@@ -335,13 +338,15 @@ public class BudgetHome extends AppCompatActivity {
         leisure.setText("£");
         balance.setText("£");
         additional.setText("£");
+        subscription.setText("£");
         income.append(Integer.toString(incomeMoney));
         bills.append(Integer.toString(billsMoney));
         taxes.append(Integer.toString(taxesMoney));
         debts.append(Integer.toString(debtsMoney));
         leisure.append(Integer.toString(leisureMoney));
         additional.append(Integer.toString(additionalMoney));
-        balance.append(Integer.toString((incomeMoney + additionalMoney) - (billsMoney + taxesMoney + debtsMoney + leisureMoney)));
+        subscription.append((Integer.toString(subscriptionMoney)));
+        balance.append(Integer.toString((incomeMoney + additionalMoney) - (billsMoney + taxesMoney + debtsMoney + leisureMoney + subscriptionMoney)));
     }
 
 }

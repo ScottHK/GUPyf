@@ -45,11 +45,12 @@
         android:layout_width="115sp"
         android:layout_height="115sp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editbudgetTextView"
         app:layout_constraintVertical_bias="0.0" />
@@ -85,13 +86,14 @@
         android:id="@+id/editdebtsBtn"
         android:layout_width="115sp"
         android:layout_height="115sp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8sp"
         android:background="@drawable/button_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/edittaxesBtn"
         app:layout_constraintTop_toBottomOf="@+id/editbillsTextView"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -126,11 +128,12 @@
         android:id="@+id/edittaxesBtn"
         android:layout_width="115sp"
         android:layout_height="115dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/button_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editdebtsBtn"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editincomeTextView"
         app:layout_constraintVertical_bias="0.0" />
@@ -166,13 +169,14 @@
         android:id="@+id/editbillsBtn"
         android:layout_width="115sp"
         android:layout_height="115sp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.753"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/editincomeBtn"
         app:layout_constraintTop_toBottomOf="@+id/editbudgetTextView"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -271,5 +275,44 @@
         app:layout_constraintStart_toStartOf="@+id/edittransactionHistoryImageView"
         app:layout_constraintTop_toTopOf="@+id/edittransactionHistoryImageView"
         android:scrollbars="vertical"/>
+
+    <Button
+        android:id="@+id/editsubscriptionBtn"
+        android:layout_width="115sp"
+        android:layout_height="115dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded"
+        app:layout_constraintBottom_toTopOf="@+id/edittransactionHistoryImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editdebtsBtn" />
+
+    <ImageView
+        android:id="@+id/editsubscriptionImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="76sp"
+        android:contentDescription="@string/image_for_taxes"
+        android:elevation="3sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editsubscriptionBtn"
+        app:layout_constraintEnd_toEndOf="@+id/editsubscriptionBtn"
+        app:layout_constraintStart_toStartOf="@+id/editsubscriptionBtn"
+        app:layout_constraintTop_toTopOf="@+id/editsubscriptionBtn"
+        app:layout_constraintVertical_bias="0.32"
+        app:srcCompat="@drawable/ic_premium" />
+
+    <TextView
+        android:id="@+id/editsubscriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:elevation="3sp"
+        android:fontFamily="@font/prompt"
+        android:text="Subscription"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/editsubscriptionBtn"
+        app:layout_constraintEnd_toEndOf="@+id/editsubscriptionBtn"
+        app:layout_constraintStart_toStartOf="@+id/editsubscriptionBtn"
+        app:layout_constraintTop_toBottomOf="@+id/editsubscriptionImageView" />
 
 </android.support.constraint.ConstraintLayout>

@@ -26,8 +26,6 @@ public class budgetCreation extends AppCompatActivity {
     Dialog myDialog;
     TextView actionLog;
     String fileLog = "";
-    boolean editCheck = false;
-    boolean isBudgetPeriod;
     String fileName;
 
 
@@ -41,15 +39,12 @@ public class budgetCreation extends AppCompatActivity {
         myDialog = new Dialog(this);
         final SaveFile save = new SaveFile();
 
-        if(getIntent().getBooleanExtra("isBudgetPeriod", false)) {
-            isBudgetPeriod = true;
-        }
-
         Button donebtn = findViewById(R.id.doneBtn);
         Button incomeDetails = findViewById(R.id.incomeBtn);
         Button billsDetails = findViewById(R.id.billsBtn);
         Button taxesDetails = findViewById(R.id.taxesBtn);
         Button debtsDetails = findViewById(R.id.debtsBtn);
+        Button subscriptionDetails = findViewById(R.id.subscriptionBtn);
 
 
         incomeDetails.setOnClickListener(new View.OnClickListener() {
@@ -77,9 +72,6 @@ public class budgetCreation extends AppCompatActivity {
                         String string = category + ": " + description + " - £" + amount + "\n";
                         actionLog.append(string);
                         fileLog += category + "/" + description + "/" + amount + "\n";
-                        if(!editCheck) {
-                            editCheck = true;
-                        }
                         myDialog.dismiss();
                     }
                 });
@@ -113,9 +105,6 @@ public class budgetCreation extends AppCompatActivity {
                         String string = category + ": " + description + " - £" + amount + "\n";
                         actionLog.append(string);
                         fileLog += category + "/" + description + "/" + amount + "\n";
-                        if(!editCheck) {
-                            editCheck = true;
-                        }
                         myDialog.dismiss();
                     }
                 });
@@ -150,9 +139,6 @@ public class budgetCreation extends AppCompatActivity {
                         String string = category + ": " + description + " - £" + amount + "\n";
                         actionLog.append(string);
                         fileLog += category + "/" + description + "/" + amount + "\n";
-                        if(!editCheck) {
-                            editCheck = true;
-                        }
                         myDialog.dismiss();
                     }
                 });
@@ -186,9 +172,38 @@ public class budgetCreation extends AppCompatActivity {
                         String string = category + ": " + description + " - £" + amount + "\n";
                         actionLog.append(string);
                         fileLog += category + "/" + description + "/" + amount + "\n";
-                        if(!editCheck) {
-                            editCheck = true;
-                        }
+                        myDialog.dismiss();
+                    }
+                });
+                myDialog.show();
+            }
+        });
+
+        subscriptionDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView txtclose;
+                Button submitBtnPop;
+                final String category = "Subscription";
+                myDialog.setContentView(R.layout.custompopup);
+                final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
+                final EditText amountET = myDialog.findViewById(R.id.amountEditText);
+                txtclose = (myDialog.findViewById(R.id.exit));
+                submitBtnPop = myDialog.findViewById(R.id.submitBtnPop);
+                txtclose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        myDialog.dismiss();
+                    }
+                });
+                submitBtnPop.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String description = descriptionET.getText().toString();
+                        String amount = amountET.getText().toString();
+                        String string = category + ": " + description + " - £" + amount + "\n";
+                        actionLog.append(string);
+                        fileLog += category + "/" + description + "/" + amount + "\n";
                         myDialog.dismiss();
                     }
                 });
@@ -200,24 +215,14 @@ public class budgetCreation extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent doneIntent = new Intent(getApplicationContext(), BudgetHome.class);
-                if(editCheck) {
 
-                    save.saveFile(getApplicationContext(), fileName, null, fileLog, false);
+                save.saveFile(getApplicationContext(), fileName, null, fileLog, false);
 
-                    doneIntent.putExtra("fileName", fileName);
-                    if(isBudgetPeriod){
-                        doneIntent.putExtra("isBudgetPeriod", true);
-                    }
-                    Toast toast = Toast.makeText(getApplicationContext(), fileLog, Toast.LENGTH_LONG);
-                    toast.show();
-                    startActivity(doneIntent);
+                doneIntent.putExtra("fileName", fileName);
+                Toast toast = Toast.makeText(getApplicationContext(), fileLog, Toast.LENGTH_LONG);
+                toast.show();
+                startActivity(doneIntent);
 
-                } else {
-                    Toast toasst = Toast.makeText(getApplicationContext(), "File has not been" +
-                            "updated: No changes specified.", Toast.LENGTH_SHORT);
-                    toasst.show();
-                    startActivity(doneIntent);
-                }
             }
         });
 

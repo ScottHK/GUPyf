@@ -45,12 +45,14 @@
         android:layout_width="115sp"
         android:layout_height="115sp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/button_rounded"
-        app:layout_constraintEnd_toStartOf="@+id/billsBtn"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/budgetTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/incomeImageView"
@@ -83,14 +85,14 @@
         android:id="@+id/debtsBtn"
         android:layout_width="115sp"
         android:layout_height="115sp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8sp"
         android:layout_marginBottom="8sp"
         android:background="@drawable/button_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.753"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/taxesBtn"
         app:layout_constraintTop_toBottomOf="@+id/billsTextView"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -129,8 +131,8 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/button_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/debtsBtn"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/incomeTextView"
         app:layout_constraintVertical_bias="0.0" />
@@ -166,14 +168,15 @@
         android:id="@+id/billsBtn"
         android:layout_width="115sp"
         android:layout_height="115sp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="8sp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.753"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/incomeBtn"
         app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -211,6 +214,7 @@
         android:layout_marginStart="8sp"
         android:layout_marginTop="8sp"
         android:layout_marginEnd="8sp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/prompt_bold"
         android:gravity="center"
         android:shadowDx="5"
@@ -219,9 +223,11 @@
         android:text="@string/tap_to_add_to_budget"
         android:textColor="@android:color/white"
         android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/doneBtn"
@@ -272,5 +278,44 @@
         app:layout_constraintStart_toStartOf="@+id/transactionHistoryImageView"
         app:layout_constraintTop_toTopOf="@+id/transactionHistoryImageView"
         android:scrollbars="vertical"/>
+
+    <Button
+        android:id="@+id/subscriptionBtn"
+        android:layout_width="115sp"
+        android:layout_height="115dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded"
+        app:layout_constraintBottom_toTopOf="@+id/transactionHistoryImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/debtsBtn" />
+
+    <ImageView
+        android:id="@+id/subscriptionImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="76sp"
+        android:contentDescription="@string/image_for_taxes"
+        android:elevation="3sp"
+        app:layout_constraintBottom_toBottomOf="@+id/subscriptionBtn"
+        app:layout_constraintEnd_toEndOf="@+id/subscriptionBtn"
+        app:layout_constraintStart_toStartOf="@+id/subscriptionBtn"
+        app:layout_constraintTop_toTopOf="@+id/subscriptionBtn"
+        app:layout_constraintVertical_bias="0.32"
+        app:srcCompat="@drawable/ic_premium" />
+
+    <TextView
+        android:id="@+id/subscriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:elevation="3sp"
+        android:fontFamily="@font/prompt"
+        android:text="Subscription"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/subscriptionBtn"
+        app:layout_constraintEnd_toEndOf="@+id/subscriptionBtn"
+        app:layout_constraintStart_toStartOf="@+id/subscriptionBtn"
+        app:layout_constraintTop_toBottomOf="@+id/subscriptionImageView" />
 
 </android.support.constraint.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,6 +24,7 @@ public class PayPeriod extends AppCompatActivity implements AdapterView.OnItemSe
 
     private EditText mStartDate;
     private DatePickerDialog.OnDateSetListener mStartDateSetListener;
+    String dateSet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +73,10 @@ public class PayPeriod extends AppCompatActivity implements AdapterView.OnItemSe
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
-                String date = dayOfMonth + "/" + month + "/" + year;
+                String monthString = (month<10?"0" : "") + month;
+                String dayOfMonthString = (dayOfMonth<10?"0" : "") + dayOfMonth;
+                String date = dayOfMonthString + "/" + monthString + "/" + year;
+                dateSet = dayOfMonthString + "-" + monthString + "-" + year;
                 mStartDate.setText(date);
             }
         };
@@ -81,6 +86,17 @@ public class PayPeriod extends AppCompatActivity implements AdapterView.OnItemSe
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+        String selected = (String) parent.getItemAtPosition(position);
+        dateCalculator dCalc = new dateCalculator();
+
+        if(selected == "Weekly") {
+            String newEndDate = dCalc.calculateDate(7, dateSet).substring(0,10);
+            Log.d("newEndDate", newEndDate);
+        } else if(selected == "Fortnightly") {
+            String newEndDate = dCalc.calculateDate(14, dateSet).substring(0,10);
+        } else {
+            String newEndDate = dCalc.calculateDate(30, dateSet).substring(0,10);
+        }
     }
 
     @Override
