@@ -9,6 +9,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,18 +34,18 @@ public class budgetCreation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget_creation);
-        fileName = getIntent().getStringExtra("date")+ ".txt";
+        fileName = getIntent().getStringExtra("date");
         actionLog = findViewById(R.id.actionLogTextView);
         actionLog.setMovementMethod(new ScrollingMovementMethod());
         myDialog = new Dialog(this);
         final SaveFile save = new SaveFile();
 
         Button donebtn = findViewById(R.id.doneBtn);
-        Button incomeDetails = findViewById(R.id.incomeBtn);
-        Button billsDetails = findViewById(R.id.billsBtn);
-        Button taxesDetails = findViewById(R.id.taxesBtn);
-        Button debtsDetails = findViewById(R.id.debtsBtn);
-        Button subscriptionDetails = findViewById(R.id.subscriptionBtn);
+        ImageButton incomeDetails = findViewById(R.id.incomeBtn);
+        ImageButton billsDetails = findViewById(R.id.billsBtn);
+        ImageButton taxesDetails = findViewById(R.id.taxesBtn);
+        ImageButton debtsDetails = findViewById(R.id.debtsBtn);
+        ImageButton subscriptionDetails = findViewById(R.id.subscriptionBtn);
 
 
         incomeDetails.setOnClickListener(new View.OnClickListener() {

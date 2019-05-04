@@ -16,6 +16,10 @@
         android:layout_marginBottom="8dp"
         android:elevation="3sp"
         android:gravity="center"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="@string/pyf"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/background_light"
@@ -43,13 +47,14 @@
         app:srcCompat="@drawable/titlebar" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="36dp"
+        android:id="@+id/iv_fileListBack"
+        android:layout_width="wrap_content"
         android:layout_height="38dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/button_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -63,12 +68,20 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="@font/prompt_bold"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/iv_fileListBack"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
@@ -83,7 +96,7 @@
         app:layout_constraintBottom_toTopOf="@+id/lv_Files"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/iv_fileListBack"
         app:layout_constraintTop_toBottomOf="@+id/titleBarImageView"
         app:srcCompat="@drawable/garbage" />
 

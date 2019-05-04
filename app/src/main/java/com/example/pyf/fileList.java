@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class fileList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_list);
         final ImageButton delete = findViewById(R.id.ib_delete);
+        final ImageView backBtn = findViewById(R.id.iv_fileListBack);
         final ListView li = findViewById(R.id.lv_Files);
         String[] array = fileList();
         ArrayList<String> lst = new ArrayList<>(Arrays.asList(array));
@@ -74,6 +76,14 @@ public class fileList extends AppCompatActivity {
                     toast.show();
                     fileDelete = true;
                 }
+            }
+        });
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent moveBackIntent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(moveBackIntent);
             }
         });
     }

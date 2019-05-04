@@ -15,14 +15,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.text.DecimalFormat;
 
 public class BudgetHome extends AppCompatActivity {
 
@@ -30,14 +25,14 @@ public class BudgetHome extends AppCompatActivity {
     String details;
     TextView transaction;
     String fileName;
-    int incomeMoney;
-    int billsMoney;
-    int taxesMoney;
-    int debtsMoney;
-    int leisureMoney;
-    int balanceMoney;
-    int additionalMoney;
-    int subscriptionMoney;
+    float incomeMoney;
+    float billsMoney;
+    float taxesMoney;
+    float debtsMoney;
+    float leisureMoney;
+    float balanceMoney;
+    float additionalMoney;
+    float subscriptionMoney;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +40,6 @@ public class BudgetHome extends AppCompatActivity {
         setContentView(R.layout.budgethome);
 
         fileName = getIntent().getStringExtra("fileName");
-        Log.d("dateEnd", fileName);
 
         final SaveFile saveMethod = new SaveFile();
         final loadFile loadMethod = new loadFile();
@@ -67,6 +61,7 @@ public class BudgetHome extends AppCompatActivity {
         final TextView subscription = findViewById(R.id.tv_SubscriptionMoney);
 
         myDialog = new Dialog(this);
+
 
         details = loadMethod.FileLoader(fileName, null , getApplicationContext());
 
@@ -176,7 +171,8 @@ public class BudgetHome extends AppCompatActivity {
                     public void onClick(View v) {
                         dateCalculator dCalc = new dateCalculator();
                         RollOverCleaner cleaner = new RollOverCleaner();
-                        Intent rollIntent = new Intent(getApplicationContext(), BudgetPeriod.class);
+                        Intent rollBPIntent = new Intent(getApplicationContext(), BudgetPeriod.class);
+                        Intent rollPPIntent = new Intent(getApplicationContext(), PayPeriod.class);
                         saveMethod.saveFile(getApplicationContext(), fileName, null, details, false);
                         String[] dateparts = fileName.split("~");
                         if(dateparts[2].contains("BP")) {
@@ -188,17 +184,20 @@ public class BudgetHome extends AppCompatActivity {
                             String newEndDate = dCalc.calculateDate(dayDifference, date2).substring(0, 10);
                             Log.d("newEndDate", newEndDate);
 
-                            rollIntent.putExtra("newEndDate", newEndDate);
-                            rollIntent.putExtra("fileName", date2);
+                            rollBPIntent.putExtra("newEndDate", newEndDate);
+                            rollBPIntent.putExtra("fileName", date2);
+                            details = cleaner.Cleaner(details);
+                            rollBPIntent.putExtra("details", details);
+                            startActivity(rollBPIntent);
                         } else if(dateparts[2].contains("PP")) {
                             String date2 = dateparts[1];
 
-                            rollIntent.putExtra("fileName", date2);
+                            details = cleaner.Cleaner(details);
+                            rollPPIntent.putExtra("details", details);
+                            rollPPIntent.putExtra("fileName", date2);
+                            startActivity(rollPPIntent);
                         }
-                        cleaner.Cleaner(details);
-                        rollIntent.putExtra("details", details);
 
-                        startActivity(rollIntent);
                     }
                 });
                 myDialog.show();
@@ -295,8 +294,11 @@ public class BudgetHome extends AppCompatActivity {
         breakdown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(getApplicationContext(), details, Toast.LENGTH_LONG);
-                toast.show();
+                Intent reportIntent = new Intent(getApplicationContext(), Report.class);
+                reportIntent.putExtra("fileName", fileName);
+                reportIntent.putExtra("details", details);
+
+                startActivity(reportIntent);
             }
         });
     }
@@ -312,6 +314,8 @@ public class BudgetHome extends AppCompatActivity {
         additionalMoney = 0;
         subscriptionMoney = 0;
 
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
 
         String[] detailsArr = details.split("\n");
         int detailsLength = detailsArr.length;
@@ -319,23 +323,23 @@ public class BudgetHome extends AppCompatActivity {
             String[] stringSplitter = detailsArr[i].split("/");
 
             if (stringSplitter[0].contains("Income")) {
-                incomeMoney += Integer.parseInt(stringSplitter[2]);
+                incomeMoney += Float.parseFloat(stringSplitter[2]);
             } else if (stringSplitter[0].contains("Bills")) {
-                billsMoney += Integer.parseInt(stringSplitter[2]);
+                billsMoney += Float.parseFloat(stringSplitter[2]);
             } else if (stringSplitter[0].contains("Taxes")) {
-                taxesMoney += Integer.parseInt(stringSplitter[2]);
+                taxesMoney += Float.parseFloat(stringSplitter[2]);
             } else if (stringSplitter[0].contains("Debts")) {
                 Log.d("stringSplit", stringSplitter[0]);
-                debtsMoney += Integer.parseInt(stringSplitter[2]);
+                debtsMoney += Float.parseFloat(stringSplitter[2]);
             } else if (stringSplitter[0].contains("Leisure")) {
                 Log.d("stringSplit", stringSplitter[0]);
-                leisureMoney += Integer.parseInt(stringSplitter[2]);
+                leisureMoney += Float.parseFloat(stringSplitter[2]);
             } else if (stringSplitter[0].contains("Fund")) {
                 Log.d("stringSplit", stringSplitter[0]);
-                additionalMoney += Integer.parseInt(stringSplitter[2]);
+                additionalMoney += Float.parseFloat(stringSplitter[2]);
             } else if (stringSplitter[0].contains("Subscription")) {
                 Log.d("stringSplit", stringSplitter[0]);
-                subscriptionMoney += Integer.parseInt(stringSplitter[2]);
+                subscriptionMoney += Float.parseFloat(stringSplitter[2]);
             }
         }
 
@@ -347,14 +351,21 @@ public class BudgetHome extends AppCompatActivity {
         balance.setText("£");
         additional.setText("£");
         subscription.setText("£");
-        income.append(Integer.toString(incomeMoney));
-        bills.append(Integer.toString(billsMoney));
-        taxes.append(Integer.toString(taxesMoney));
-        debts.append(Integer.toString(debtsMoney));
-        leisure.append(Integer.toString(leisureMoney));
-        additional.append(Integer.toString(additionalMoney));
-        subscription.append((Integer.toString(subscriptionMoney)));
-        balance.append(Integer.toString((incomeMoney + additionalMoney) - (billsMoney + taxesMoney + debtsMoney + leisureMoney + subscriptionMoney)));
+        income.append(String.format("%.2f", incomeMoney));
+        bills.append(String.format("%.2f", billsMoney));
+        taxes.append(String.format("%.2f", taxesMoney));
+        debts.append(String.format("%.2f", debtsMoney));
+        leisure.append(String.format("%.2f", leisureMoney));
+        additional.append(String.format("%.2f", additionalMoney));
+        subscription.append(String.format("%.2f", subscriptionMoney));
+        balance.append(String.format("%.2f", ((incomeMoney + additionalMoney) - (billsMoney + taxesMoney + debtsMoney + leisureMoney + subscriptionMoney))));
+    }
+
+    public void onBackPressed() {
+        SaveFile saveMethod = new SaveFile();
+        saveMethod.saveFile(getApplicationContext(), fileName, null, details, false);
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finish();
     }
 
 }

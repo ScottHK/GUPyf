@@ -34,15 +34,13 @@ public class EditBudget extends AppCompatActivity {
 
 
         Button donebtn = findViewById(R.id.editdoneBtn);
-        Button incomeDetails = findViewById(R.id.editincomeBtn);
-        Button billsDetails = findViewById(R.id.editbillsBtn);
-        Button taxesDetails = findViewById(R.id.edittaxesBtn);
-        Button debtsDetails = findViewById(R.id.editdebtsBtn);
-        Button subscriptionDetails = findViewById(R.id.editsubscriptionBtn);
+        ImageButton incomeDetails = findViewById(R.id.editincomeBtn);
+        ImageButton billsDetails = findViewById(R.id.editbillsBtn);
+        ImageButton taxesDetails = findViewById(R.id.edittaxesBtn);
+        ImageButton debtsDetails = findViewById(R.id.editdebtsBtn);
+        ImageButton subscriptionDetails = findViewById(R.id.editsubscriptionBtn);
 
         fileLog = load.FileLoader(fileName, null, getApplicationContext());
-        Toast toast = Toast.makeText(getApplicationContext(), fileLog, Toast.LENGTH_LONG);
-        toast.show();
 
         incomeDetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,8 +53,7 @@ public class EditBudget extends AppCompatActivity {
                 final EditText amountET = myDialog.findViewById(R.id.amountEditText);
                 txtclose = myDialog.findViewById(R.id.exit);
                 submitBtnPop = myDialog.findViewById(R.id.submitBtnPop);
-                Toast toast = Toast.makeText(getApplicationContext(), fileLog, Toast.LENGTH_LONG);
-                toast.show();
+
                 txtclose.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -74,8 +71,7 @@ public class EditBudget extends AppCompatActivity {
                         if(!editCheck) {
                             editCheck = true;
                         }
-                        Toast toast = Toast.makeText(getApplicationContext(), fileLog, Toast.LENGTH_LONG);
-                        toast.show();
+
                         myDialog.dismiss();
                     }
                 });
@@ -236,14 +232,14 @@ public class EditBudget extends AppCompatActivity {
                     save.saveFile(getApplicationContext(), fileName, null, fileLog, false);
 
                     doneIntent.putExtra("fileName", fileName);
-                    Toast toast = Toast.makeText(getApplicationContext(), fileLog, Toast.LENGTH_LONG);
-                    toast.show();
+
                     startActivity(doneIntent);
 
                 } else {
-                    Toast toasst = Toast.makeText(getApplicationContext(), "File has not been" +
+                    Toast toasst = Toast.makeText(getApplicationContext(), "File has not been " +
                             "updated: No changes specified.", Toast.LENGTH_LONG);
                     toasst.show();
+                    doneIntent.putExtra("fileName", fileName);
                     startActivity(doneIntent);
                 }
             }

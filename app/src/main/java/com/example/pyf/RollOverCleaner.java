@@ -14,15 +14,12 @@ public class RollOverCleaner {
 
             if (stringSplitter[0].contains("Income")) {
                 cleanedDetails += StringConstruction(stringSplitter);
+                Log.d("CleanerSplitter", cleanedDetails);
             } else if (stringSplitter[0].contains("Bills")) {
                 cleanedDetails += StringConstruction(stringSplitter);
             } else if (stringSplitter[0].contains("Taxes")) {
                 cleanedDetails += StringConstruction(stringSplitter);
             } else if (stringSplitter[0].contains("Debts")) {
-                cleanedDetails += StringConstruction(stringSplitter);
-            } else if (stringSplitter[0].contains("Leisure")) {
-                cleanedDetails += StringConstruction(stringSplitter);
-            } else if (stringSplitter[0].contains("Fund")) {
                 cleanedDetails += StringConstruction(stringSplitter);
             } else if (stringSplitter[0].contains("Subscription")) {
                 cleanedDetails += StringConstruction(stringSplitter);

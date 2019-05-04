@@ -17,6 +17,10 @@
         android:layout_marginBottom="8dp"
         android:elevation="3sp"
         android:gravity="center"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="@string/pyf"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/background_light"
@@ -27,21 +31,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"/>
-
-    <ImageView
-        android:id="@+id/titleBarImageView"
-        android:layout_width="416dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/bar_for_string_bar_for_title"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/titlebar" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/budgetTextView"
@@ -52,7 +42,7 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/prompt_bold"
         android:gravity="center"
-        android:shadowColor="#00000000"
+        android:shadowColor="#000"
         android:shadowDx="5"
         android:shadowDy="5"
         android:shadowRadius="5"
@@ -65,37 +55,35 @@
 
     <EditText
         android:id="@+id/startDatePlainText"
-        android:layout_width="225sp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:autofillHints=""
         android:background="#597EAA"
         android:ems="10"
-        android:importantForAutofill="no"
         android:inputType="date"
         android:labelFor="@+id/latestPaymentDatePlainText"
-        android:text="Enter..."
-        android:focusable="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startDateTextView"
         app:layout_constraintVertical_bias="0.0"
-        tools:targetApi="o" />
+        android:focusable="false"/>
 
     <EditText
         android:id="@+id/endDatePlainText"
-        android:layout_width="225sp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:autofillHints="End Date for Budget"
         android:background="#597EAA"
         android:ems="10"
-        android:importantForAutofill="no"
         android:inputType="date"
         android:labelFor="@+id/endDatePlainText"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,25 +91,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/endDateTextView"
         app:layout_constraintVertical_bias="0.0"
-        tools:targetApi="o" />
+        android:focusable="false"/>
 
     <TextView
         android:id="@+id/startDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/prompt_bold"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="@string/start_date"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.332"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.42000002" />
+        app:layout_constraintVertical_bias="0.41000003" />
 
     <TextView
         android:id="@+id/endDateTextView"
@@ -132,15 +125,19 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/prompt_bold"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="@string/end_date"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintVertical_bias="0.61" />
 
     <Button
         android:id="@+id/submitBtn"
@@ -153,6 +150,10 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_rounded"
         android:fontFamily="@font/prompt_bold"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="@string/submit"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@android:color/white"
@@ -160,5 +161,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/endDatePlainText" />
+
+    <ImageView
+        android:id="@+id/titleBarImageView"
+        android:layout_width="416dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/bar_for_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/titlebar" />
 
 </android.support.constraint.ConstraintLayout>

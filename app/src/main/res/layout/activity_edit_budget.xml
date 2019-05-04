@@ -8,6 +8,209 @@
     android:fadingEdge="none"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/editlinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editbudgetTextView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/editincomeBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/editincomeBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_hand"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/editincomeTextView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_bold"
+                    android:gravity="center"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:text="@string/income"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/editbillsBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/editbillsBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_bill"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/editbillsTextView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_bold"
+                    android:gravity="center"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:text="@string/bills"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/edittaxesBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/edittaxesBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_tax"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/edittaxesTextView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_bold"
+                    android:gravity="center"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="6dp"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:text="@string/taxes"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/editdebtsBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/editdebtsBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_debt"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/editdebtsTextView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_bold"
+                    android:gravity="center"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:text="@string/debts"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/editsubscriptionBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/editsubscriptionBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_premium"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/editsubscriptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/prompt_bold"
+                    android:gravity="center"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="6dp"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:text="Subscription"
+                    android:textColor="#FFFFFF"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/titleBarImageView"
         android:layout_width="416sp"
@@ -28,6 +231,10 @@
         android:layout_marginStart="8sp"
         android:layout_marginEnd="8sp"
         android:gravity="center"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="@string/pyf"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/background_light"
@@ -40,173 +247,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/editincomeBtn"
-        android:layout_width="115sp"
-        android:layout_height="115sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editbudgetTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/editincomeImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="76sp"
-        android:contentDescription="@string/image_for_income"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editincomeBtn"
-        app:layout_constraintEnd_toEndOf="@+id/editincomeBtn"
-        app:layout_constraintStart_toStartOf="@+id/editincomeBtn"
-        app:layout_constraintTop_toTopOf="@+id/editincomeBtn"
-        app:layout_constraintVertical_bias="0.32"
-        app:srcCompat="@drawable/ic_hand" />
-
-    <TextView
-        android:id="@+id/editincomeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8sp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="@string/income"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/editincomeBtn"
-        app:layout_constraintEnd_toEndOf="@+id/editincomeBtn"
-        app:layout_constraintStart_toStartOf="@+id/editincomeBtn"
-        app:layout_constraintTop_toBottomOf="@+id/editincomeImageView" />
-
-    <Button
-        android:id="@+id/editdebtsBtn"
-        android:layout_width="115sp"
-        android:layout_height="115sp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8sp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/edittaxesBtn"
-        app:layout_constraintTop_toBottomOf="@+id/editbillsTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/editdebtsImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="76sp"
-        android:contentDescription="@string/image_for_debts"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editdebtsBtn"
-        app:layout_constraintEnd_toEndOf="@+id/editdebtsBtn"
-        app:layout_constraintStart_toStartOf="@+id/editdebtsBtn"
-        app:layout_constraintTop_toTopOf="@+id/editdebtsBtn"
-        app:layout_constraintVertical_bias="0.32"
-        app:srcCompat="@drawable/ic_debt" />
-
-    <TextView
-        android:id="@+id/editdebtsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8sp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="@string/debts"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/editdebtsBtn"
-        app:layout_constraintEnd_toEndOf="@+id/editdebtsBtn"
-        app:layout_constraintStart_toStartOf="@+id/editdebtsBtn"
-        app:layout_constraintTop_toBottomOf="@+id/editdebtsImageView" />
-
-    <Button
-        android:id="@+id/edittaxesBtn"
-        android:layout_width="115sp"
-        android:layout_height="115dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editincomeTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/edittaxesImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="76sp"
-        android:contentDescription="@string/image_for_taxes"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/edittaxesBtn"
-        app:layout_constraintEnd_toEndOf="@+id/edittaxesBtn"
-        app:layout_constraintStart_toStartOf="@+id/edittaxesBtn"
-        app:layout_constraintTop_toTopOf="@+id/edittaxesBtn"
-        app:layout_constraintVertical_bias="0.32"
-        app:srcCompat="@drawable/ic_tax" />
-
-    <TextView
-        android:id="@+id/edittaxesTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8sp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="@string/taxes"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/edittaxesBtn"
-        app:layout_constraintEnd_toEndOf="@+id/edittaxesBtn"
-        app:layout_constraintStart_toStartOf="@+id/edittaxesBtn"
-        app:layout_constraintTop_toBottomOf="@+id/edittaxesImageView" />
-
-    <Button
-        android:id="@+id/editbillsBtn"
-        android:layout_width="115sp"
-        android:layout_height="115sp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editincomeBtn"
-        app:layout_constraintTop_toBottomOf="@+id/editbudgetTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/editbillsImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="76sp"
-        android:contentDescription="@string/image_for_bills"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editbillsBtn"
-        app:layout_constraintEnd_toEndOf="@+id/editbillsBtn"
-        app:layout_constraintStart_toStartOf="@+id/editbillsBtn"
-        app:layout_constraintTop_toTopOf="@+id/editbillsBtn"
-        app:layout_constraintVertical_bias="0.32"
-        app:srcCompat="@drawable/ic_bill" />
-
-    <TextView
-        android:id="@+id/editbillsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8sp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="@string/bills"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/editbillsBtn"
-        app:layout_constraintEnd_toEndOf="@+id/editbillsBtn"
-        app:layout_constraintStart_toStartOf="@+id/editbillsBtn"
-        app:layout_constraintTop_toBottomOf="@+id/editbillsImageView" />
-
     <TextView
         android:id="@+id/editbudgetTextView"
         android:layout_width="354sp"
@@ -214,17 +254,21 @@
         android:layout_marginStart="8sp"
         android:layout_marginTop="8sp"
         android:layout_marginEnd="8sp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/prompt_bold"
         android:gravity="center"
+        android:shadowColor="#000"
         android:shadowDx="5"
         android:shadowDy="5"
         android:shadowRadius="5"
         android:text="@string/tap_to_add_to_budget"
         android:textColor="@android:color/white"
         android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/editdoneBtn"
@@ -237,6 +281,10 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_rounded"
         android:fontFamily="@font/prompt_bold"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="@string/done"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@android:color/white"
@@ -244,21 +292,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittransactionHistoryImageView"
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/edittransactionHistoryImageView"
         android:layout_width="0dp"
         android:layout_height="121dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/box_for_messages"
-        app:layout_constraintBottom_toTopOf="@+id/editdoneBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edittaxesTextView"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/editlinearLayout"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/msgbox" />
 
     <TextView
@@ -270,49 +320,14 @@
         android:fontFamily="@font/prompt"
         android:textColor="@android:color/white"
         android:textStyle="bold"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         app:layout_constraintBottom_toBottomOf="@+id/edittransactionHistoryImageView"
         app:layout_constraintEnd_toEndOf="@+id/edittransactionHistoryImageView"
         app:layout_constraintStart_toStartOf="@+id/edittransactionHistoryImageView"
         app:layout_constraintTop_toTopOf="@+id/edittransactionHistoryImageView"
         android:scrollbars="vertical"/>
-
-    <Button
-        android:id="@+id/editsubscriptionBtn"
-        android:layout_width="115sp"
-        android:layout_height="115dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toTopOf="@+id/edittransactionHistoryImageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editdebtsBtn" />
-
-    <ImageView
-        android:id="@+id/editsubscriptionImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="76sp"
-        android:contentDescription="@string/image_for_taxes"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/editsubscriptionBtn"
-        app:layout_constraintEnd_toEndOf="@+id/editsubscriptionBtn"
-        app:layout_constraintStart_toStartOf="@+id/editsubscriptionBtn"
-        app:layout_constraintTop_toTopOf="@+id/editsubscriptionBtn"
-        app:layout_constraintVertical_bias="0.32"
-        app:srcCompat="@drawable/ic_premium" />
-
-    <TextView
-        android:id="@+id/editsubscriptionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="Subscription"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/editsubscriptionBtn"
-        app:layout_constraintEnd_toEndOf="@+id/editsubscriptionBtn"
-        app:layout_constraintStart_toStartOf="@+id/editsubscriptionBtn"
-        app:layout_constraintTop_toBottomOf="@+id/editsubscriptionImageView" />
 
 </android.support.constraint.ConstraintLayout>

@@ -8,6 +8,189 @@
     android:fadingEdge="none"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/incomeBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/incomeBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_hand"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/incomeTextView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_bold"
+                    android:gravity="center"
+                    android:text="@string/income"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/billsBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/billsBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_bill"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/billsTextView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_bold"
+                    android:gravity="center"
+                    android:text="@string/bills"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/taxesBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/taxesBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_tax"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/taxesTextView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_bold"
+                    android:gravity="center"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="6dp"
+                    android:text="@string/taxes"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/debtsBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/debtsBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_debt"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/debtsTextView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_bold"
+                    android:gravity="center"
+                    android:text="@string/debts"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/subscriptionBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/subscriptionBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_premium"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/subscriptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/prompt_bold"
+                    android:gravity="center"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:paddingBottom="6dp"
+                    android:text="Subscription"
+                    android:textColor="#FFFFFF"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/titleBarImageView"
         android:layout_width="416sp"
@@ -28,6 +211,10 @@
         android:layout_marginStart="8sp"
         android:layout_marginEnd="8sp"
         android:gravity="center"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="@string/pyf"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/background_light"
@@ -40,173 +227,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/incomeBtn"
-        android:layout_width="115sp"
-        android:layout_height="115sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/incomeImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="76sp"
-        android:contentDescription="@string/image_for_income"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/incomeBtn"
-        app:layout_constraintEnd_toEndOf="@+id/incomeBtn"
-        app:layout_constraintStart_toStartOf="@+id/incomeBtn"
-        app:layout_constraintTop_toTopOf="@+id/incomeBtn"
-        app:layout_constraintVertical_bias="0.32"
-        app:srcCompat="@drawable/ic_hand" />
-
-    <TextView
-        android:id="@+id/incomeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8sp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="@string/income"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/incomeBtn"
-        app:layout_constraintEnd_toEndOf="@+id/incomeBtn"
-        app:layout_constraintStart_toStartOf="@+id/incomeBtn"
-        app:layout_constraintTop_toBottomOf="@+id/incomeImageView" />
-
-    <Button
-        android:id="@+id/debtsBtn"
-        android:layout_width="115sp"
-        android:layout_height="115sp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8sp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/taxesBtn"
-        app:layout_constraintTop_toBottomOf="@+id/billsTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/debtsImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="76sp"
-        android:contentDescription="@string/image_for_debts"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/debtsBtn"
-        app:layout_constraintEnd_toEndOf="@+id/debtsBtn"
-        app:layout_constraintStart_toStartOf="@+id/debtsBtn"
-        app:layout_constraintTop_toTopOf="@+id/debtsBtn"
-        app:layout_constraintVertical_bias="0.32"
-        app:srcCompat="@drawable/ic_debt" />
-
-    <TextView
-        android:id="@+id/debtsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8sp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="@string/debts"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/debtsBtn"
-        app:layout_constraintEnd_toEndOf="@+id/debtsBtn"
-        app:layout_constraintStart_toStartOf="@+id/debtsBtn"
-        app:layout_constraintTop_toBottomOf="@+id/debtsImageView" />
-
-    <Button
-        android:id="@+id/taxesBtn"
-        android:layout_width="115sp"
-        android:layout_height="115dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/incomeTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/taxesImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="76sp"
-        android:contentDescription="@string/image_for_taxes"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/taxesBtn"
-        app:layout_constraintEnd_toEndOf="@+id/taxesBtn"
-        app:layout_constraintStart_toStartOf="@+id/taxesBtn"
-        app:layout_constraintTop_toTopOf="@+id/taxesBtn"
-        app:layout_constraintVertical_bias="0.32"
-        app:srcCompat="@drawable/ic_tax" />
-
-    <TextView
-        android:id="@+id/taxesTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8sp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="@string/taxes"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/taxesBtn"
-        app:layout_constraintEnd_toEndOf="@+id/taxesBtn"
-        app:layout_constraintStart_toStartOf="@+id/taxesBtn"
-        app:layout_constraintTop_toBottomOf="@+id/taxesImageView" />
-
-    <Button
-        android:id="@+id/billsBtn"
-        android:layout_width="115sp"
-        android:layout_height="115sp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="8sp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/incomeBtn"
-        app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/billsImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="76sp"
-        android:contentDescription="@string/image_for_bills"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/billsBtn"
-        app:layout_constraintEnd_toEndOf="@+id/billsBtn"
-        app:layout_constraintStart_toStartOf="@+id/billsBtn"
-        app:layout_constraintTop_toTopOf="@+id/billsBtn"
-        app:layout_constraintVertical_bias="0.32"
-        app:srcCompat="@drawable/ic_bill" />
-
-    <TextView
-        android:id="@+id/billsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8sp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="@string/bills"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/billsBtn"
-        app:layout_constraintEnd_toEndOf="@+id/billsBtn"
-        app:layout_constraintStart_toStartOf="@+id/billsBtn"
-        app:layout_constraintTop_toBottomOf="@+id/billsImageView" />
-
     <TextView
         android:id="@+id/budgetTextView"
         android:layout_width="354sp"
@@ -217,6 +237,7 @@
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/prompt_bold"
         android:gravity="center"
+        android:shadowColor="#000"
         android:shadowDx="5"
         android:shadowDy="5"
         android:shadowRadius="5"
@@ -240,6 +261,10 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_rounded"
         android:fontFamily="@font/prompt_bold"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         android:text="@string/done"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="@android:color/white"
@@ -247,7 +272,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transactionHistoryImageView"
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
@@ -257,11 +282,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/box_for_messages"
-        app:layout_constraintBottom_toTopOf="@+id/doneBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taxesTextView"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/msgbox" />
 
     <TextView
@@ -273,49 +298,14 @@
         android:fontFamily="@font/prompt"
         android:textColor="@android:color/white"
         android:textStyle="bold"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
         app:layout_constraintBottom_toBottomOf="@+id/transactionHistoryImageView"
         app:layout_constraintEnd_toEndOf="@+id/transactionHistoryImageView"
         app:layout_constraintStart_toStartOf="@+id/transactionHistoryImageView"
         app:layout_constraintTop_toTopOf="@+id/transactionHistoryImageView"
         android:scrollbars="vertical"/>
-
-    <Button
-        android:id="@+id/subscriptionBtn"
-        android:layout_width="115sp"
-        android:layout_height="115dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toTopOf="@+id/transactionHistoryImageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/debtsBtn" />
-
-    <ImageView
-        android:id="@+id/subscriptionImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="76sp"
-        android:contentDescription="@string/image_for_taxes"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toBottomOf="@+id/subscriptionBtn"
-        app:layout_constraintEnd_toEndOf="@+id/subscriptionBtn"
-        app:layout_constraintStart_toStartOf="@+id/subscriptionBtn"
-        app:layout_constraintTop_toTopOf="@+id/subscriptionBtn"
-        app:layout_constraintVertical_bias="0.32"
-        app:srcCompat="@drawable/ic_premium" />
-
-    <TextView
-        android:id="@+id/subscriptionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:elevation="3sp"
-        android:fontFamily="@font/prompt"
-        android:text="Subscription"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/subscriptionBtn"
-        app:layout_constraintEnd_toEndOf="@+id/subscriptionBtn"
-        app:layout_constraintStart_toStartOf="@+id/subscriptionBtn"
-        app:layout_constraintTop_toBottomOf="@+id/subscriptionImageView" />
 
 </android.support.constraint.ConstraintLayout>
