@@ -220,8 +220,6 @@ public class budgetCreation extends AppCompatActivity {
                 save.saveFile(getApplicationContext(), fileName, null, fileLog, false);
 
                 doneIntent.putExtra("fileName", fileName);
-                Toast toast = Toast.makeText(getApplicationContext(), fileLog, Toast.LENGTH_LONG);
-                toast.show();
                 startActivity(doneIntent);
 
             }

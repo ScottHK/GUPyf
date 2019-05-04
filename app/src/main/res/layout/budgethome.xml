@@ -8,6 +8,396 @@
     android:fadingEdge="none"
     tools:context=".BudgetHome">
 
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:elevation="3dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/availableBalanceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/available_balance"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/balanceMoneyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="£"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/billsOverviewTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/bills"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/billsMoneyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="£"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/taxesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/taxes"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/taxesMoneyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="£"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/debtsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/debts"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/debtsMoneyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="£"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/leisureTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="Leisure"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_leisureMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="£"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/additionalTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="Additional Funds"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/additionalMoneyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="£"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/incomeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/income"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/incomeMoneyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="£"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_Subscriptions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="Subscriptions"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_SubscriptionMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="£"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        app:layout_constraintVertical_bias="0.39">
+
+        <LinearLayout
+            android:id="@+id/editLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rounded"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btn_edit"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_edit"
+                android:paddingTop="5dp" />
+
+            <TextView
+                android:id="@+id/tv_edit"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_bold"
+                android:gravity="center"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="Edit"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/archiveLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rounded"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btn_archive"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_archive"
+                android:paddingTop="5dp" />
+
+            <TextView
+                android:id="@+id/tv_Archive"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_bold"
+                android:gravity="center"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="Export"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/newLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rounded"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btn_New"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/new_file"
+                android:paddingTop="5dp" />
+
+            <TextView
+                android:id="@+id/tv_New"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_bold"
+                android:gravity="center"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/new1"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/quickLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rounded"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btn_Quick"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_plus"
+                android:paddingTop="5dp" />
+
+            <TextView
+                android:id="@+id/tv_Quick"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_bold"
+                android:gravity="center"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="Q. Add"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
     <TextView
         android:id="@+id/budgetTextView"
         android:layout_width="wrap_content"
@@ -31,317 +421,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/overviewBoxImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="@string/overview_box"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/overview_box" />
-
-    <TextView
-        android:id="@+id/availableBalanceTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="@string/available_balance"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/overviewBoxImageView"
-        app:layout_constraintTop_toTopOf="@+id/overviewBoxImageView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/balanceMoneyTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="£"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/availableBalanceTextView"
-        app:layout_constraintTop_toBottomOf="@+id/availableBalanceTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/taxesTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="@string/taxes"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/overviewBoxImageView"
-        app:layout_constraintTop_toBottomOf="@+id/billsMoneyTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/debtsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="52dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="@string/debts"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/overviewBoxImageView"
-        app:layout_constraintTop_toBottomOf="@+id/taxesMoneyTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/debtsMoneyTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="£"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/debtsTextView"
-        app:layout_constraintTop_toBottomOf="@+id/debtsTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/incomeMoneyTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="£"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/incomeTextView"
-        app:layout_constraintTop_toBottomOf="@+id/incomeTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/billsMoneyTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="£"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/billsOverviewTextView"
-        app:layout_constraintTop_toBottomOf="@+id/billsOverviewTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/incomeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="@string/income"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/overviewBoxImageView"
-        app:layout_constraintTop_toBottomOf="@+id/debtsMoneyTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/taxesMoneyTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="£"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/taxesTextView"
-        app:layout_constraintTop_toBottomOf="@+id/taxesTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/additionalTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="Additional Funds"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.88"
-        app:layout_constraintStart_toStartOf="@+id/overviewBoxImageView"
-        app:layout_constraintTop_toBottomOf="@+id/tv_leisureMoney"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/leisureTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="Leisure"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.7"
-        app:layout_constraintStart_toStartOf="@+id/overviewBoxImageView"
-        app:layout_constraintTop_toTopOf="@+id/overviewBoxImageView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tv_leisureMoney"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="£"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/leisureTextView"
-        app:layout_constraintTop_toBottomOf="@+id/leisureTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/additionalMoneyTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="£"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/additionalTextView"
-        app:layout_constraintTop_toBottomOf="@+id/additionalTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/billsOverviewTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="@string/bills"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/overviewBoxImageView"
-        app:layout_constraintTop_toBottomOf="@+id/balanceMoneyTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
     <TextView
         android:id="@+id/transactionHistoryTextView"
-        android:layout_width="349dp"
-        android:layout_height="123dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:elevation="3dp"
         android:fontFamily="@font/prompt"
+        android:scrollbars="vertical"
         android:shadowColor="#000"
         android:shadowDx="5"
         android:shadowDy="5"
         android:shadowRadius="5"
-        android:scrollbars="vertical"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/transactionHistoryImageView"
@@ -351,178 +441,30 @@
 
     <ImageView
         android:id="@+id/transactionHistoryImageView"
-        android:layout_width="0dp"
-        android:layout_height="147dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/box_for_messages"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editLayout"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         app:srcCompat="@drawable/msgbox" />
-
-    <LinearLayout
-        android:id="@+id/editLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageButton
-            android:id="@+id/btn_edit"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/ic_edit"
-            android:paddingTop="5dp" />
-
-        <TextView
-            android:id="@+id/tv_edit"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/prompt_bold"
-            android:gravity="center"
-            android:shadowColor="#000"
-            android:shadowDx="5"
-            android:shadowDy="5"
-            android:shadowRadius="5"
-            android:text="Edit"
-            android:textColor="#FFFFFF" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/archiveLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editLayout"
-        app:layout_constraintTop_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageButton
-            android:id="@+id/btn_archive"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/ic_archive"
-            android:paddingTop="5dp" />
-
-        <TextView
-            android:id="@+id/tv_Archive"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/prompt_bold"
-            android:gravity="center"
-            android:shadowColor="#000"
-            android:shadowDx="5"
-            android:shadowDy="5"
-            android:shadowRadius="5"
-            android:text="Export"
-            android:textColor="#FFFFFF" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/newLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/quickLayout"
-        app:layout_constraintTop_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageButton
-            android:id="@+id/btn_New"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/new_file"
-            android:paddingTop="5dp" />
-
-        <TextView
-            android:id="@+id/tv_New"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/prompt_bold"
-            android:gravity="center"
-            android:shadowColor="#000"
-            android:shadowDx="5"
-            android:shadowDy="5"
-            android:shadowRadius="5"
-            android:text="@string/new1"
-            android:textColor="#FFFFFF" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/quickLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageButton
-            android:id="@+id/btn_Quick"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/ic_plus"
-            android:paddingTop="5dp" />
-
-        <TextView
-            android:id="@+id/tv_Quick"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/prompt_bold"
-            android:gravity="center"
-            android:shadowColor="#000"
-            android:shadowDx="5"
-            android:shadowDy="5"
-            android:shadowRadius="5"
-            android:text="Q. Add"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/breakdownLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/button_rounded_dark"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="@+id/overviewBoxImageView"
-        app:layout_constraintTop_toTopOf="@+id/overviewBoxImageView"
-        app:layout_constraintVertical_bias="0.9">
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <ImageButton
             android:id="@+id/btn_Breakdown"
@@ -548,46 +490,5 @@
             android:textSize="14sp" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_Subscriptions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="Subscriptions"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.81"
-        app:layout_constraintStart_toStartOf="@+id/overviewBoxImageView"
-        app:layout_constraintTop_toBottomOf="@+id/additionalMoneyTextView"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tv_SubscriptionMoney"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/prompt"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="£"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/overviewBoxImageView"
-        app:layout_constraintEnd_toEndOf="@+id/overviewBoxImageView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_Subscriptions"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Subscriptions"
-        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
