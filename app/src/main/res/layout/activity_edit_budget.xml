@@ -207,6 +207,34 @@
                     android:textSize="11sp" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/editsavingsBtnLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_rounded"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/editsavingsBtn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_piggy_bank"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/editsavingsTextView"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_bold"
+                    android:gravity="center"
+                    android:text="Savings"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

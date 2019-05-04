@@ -17,27 +17,10 @@
             android:layout_width="115sp"
             android:layout_height="115sp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/button_rounded"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.75" />
-
-        <Button
-            android:id="@+id/googleDriveBtn"
-            android:layout_width="115sp"
-            android:layout_height="115sp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/button_rounded"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.75"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.75" />
@@ -72,40 +55,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/deviceBtn"
             app:layout_constraintEnd_toEndOf="@+id/deviceBtn"
             app:layout_constraintStart_toStartOf="@+id/deviceBtn" />
-
-        <ImageView
-            android:id="@+id/googleDriveImageView"
-            android:layout_width="60sp"
-            android:layout_height="60sp"
-            android:contentDescription="@string/google_drive_icon"
-            android:elevation="3dp"
-            app:layout_constraintBottom_toTopOf="@+id/googleDriveTextView"
-            app:layout_constraintEnd_toEndOf="@+id/googleDriveBtn"
-            app:layout_constraintStart_toStartOf="@+id/googleDriveBtn"
-            app:layout_constraintTop_toTopOf="@+id/googleDriveBtn"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/ic_google_drive" />
-
-        <TextView
-            android:id="@+id/googleDriveTextView"
-            style="prom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="3dp"
-            android:elevation="3dp"
-            android:fontFamily="@font/prompt"
-            android:gravity="center"
-            android:shadowColor="#000"
-            android:shadowDx="5"
-            android:shadowDy="5"
-            android:shadowRadius="5"
-            android:text="Google\nDrive"
-            android:textColor="@android:color/white"
-            android:textColorLink="@android:color/white"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/googleDriveBtn"
-            app:layout_constraintEnd_toEndOf="@+id/googleDriveBtn"
-            app:layout_constraintStart_toStartOf="@+id/googleDriveBtn" />
 
         <TextView
             android:id="@+id/archiveExit"
@@ -165,7 +114,7 @@
             android:shadowDx="5"
             android:shadowDy="5"
             android:shadowRadius="5"
-            android:text="@string/export_to_device_or_upload_to_google_drive"
+            android:text="Export to Device:"
             android:textColor="@android:color/white"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -39,6 +39,7 @@ public class EditBudget extends AppCompatActivity {
         ImageButton taxesDetails = findViewById(R.id.edittaxesBtn);
         ImageButton debtsDetails = findViewById(R.id.editdebtsBtn);
         ImageButton subscriptionDetails = findViewById(R.id.editsubscriptionBtn);
+        ImageButton savingsDetails = findViewById(R.id.editsavingsBtn);
 
         fileLog = load.FileLoader(fileName, null, getApplicationContext());
 
@@ -189,6 +190,41 @@ public class EditBudget extends AppCompatActivity {
         });
 
         subscriptionDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView txtclose;
+                Button submitBtnPop;
+                final String category = "Subscription";
+                myDialog.setContentView(R.layout.custompopup);
+                final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
+                final EditText amountET = myDialog.findViewById(R.id.amountEditText);
+                txtclose = (myDialog.findViewById(R.id.exit));
+                submitBtnPop = myDialog.findViewById(R.id.submitBtnPop);
+                txtclose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        myDialog.dismiss();
+                    }
+                });
+                submitBtnPop.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String description = descriptionET.getText().toString();
+                        String amount = amountET.getText().toString();
+                        String string = category + ": " + description + " - £" + amount + "\n";
+                        actionLog.append(string);
+                        fileLog += category + "/" + description + "/" + amount + "\n";
+                        if(!editCheck) {
+                            editCheck = true;
+                        }
+                        myDialog.dismiss();
+                    }
+                });
+                myDialog.show();
+            }
+        });
+
+        savingsDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView txtclose;

@@ -59,13 +59,14 @@ public class BudgetHome extends AppCompatActivity {
         final TextView leisure = findViewById(R.id.tv_leisureMoney);
         final TextView additional = findViewById(R.id.additionalMoneyTextView);
         final TextView subscription = findViewById(R.id.tv_SubscriptionMoney);
+        final TextView savings = findViewById(R.id.tv_savingsMoney);
 
         myDialog = new Dialog(this);
 
 
         details = loadMethod.FileLoader(fileName, null , getApplicationContext());
 
-        overviewGenerate(income, bills, taxes, debts, leisure, balance, additional, subscription);
+        overviewGenerate(income, bills, taxes, debts, leisure, balance, additional, subscription, savings);
 
 
         transaction.setMovementMethod(new ScrollingMovementMethod());
@@ -113,7 +114,6 @@ public class BudgetHome extends AppCompatActivity {
                 myDialog.setContentView(R.layout.activity_exportarchive);
                 close = myDialog.findViewById(R.id.archiveExit);
                 device = myDialog.findViewById(R.id.deviceBtn);
-                gdrive = myDialog.findViewById(R.id.googleDriveBtn);
 
                 close.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -246,7 +246,7 @@ public class BudgetHome extends AppCompatActivity {
                                 String string = description + ": -£" + amount + "\n";
                                 transaction.append(string);
                                 details += category + "/" + description + "/" + amount + "\n";
-                                overviewGenerate(income, bills, taxes, debts, leisure, balance, additional, subscription);
+                                overviewGenerate(income, bills, taxes, debts, leisure, balance, additional, subscription, savings);
                                 saveMethod.saveFile(getApplicationContext(), fileName, null, details, false);
                                 myDialog.dismiss();
                             }
@@ -303,7 +303,7 @@ public class BudgetHome extends AppCompatActivity {
         });
     }
 
-    public void overviewGenerate(TextView income, TextView bills, TextView taxes, TextView debts, TextView leisure, TextView balance, TextView additional, TextView subscription) {
+    public void overviewGenerate(TextView income, TextView bills, TextView taxes, TextView debts, TextView leisure, TextView balance, TextView additional, TextView subscription, TextView Savings) {
 
         incomeMoney = 0;
         billsMoney = 0;
