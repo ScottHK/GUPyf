@@ -28,7 +28,7 @@ public class fileList extends AppCompatActivity {
         String[] array = fileList();
         ArrayList<String> lst = new ArrayList<>(Arrays.asList(array));
         final ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, lst);
+                R.layout.listviewstyle, R.id.textView2, lst);
 
         li.setAdapter(adapter);
         li.setOnItemClickListener(new AdapterView.OnItemClickListener() {
