@@ -88,6 +88,32 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/tv_SavingsReports"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/prompt_bold"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:text="Savings" />
+
+                <TextView
+                    android:id="@+id/tv_SavingsEntries"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/prompt_bold"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:paddingStart="30dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+                <TextView
                     android:id="@+id/tv_SubscriptionsReport"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

@@ -229,7 +229,7 @@ public class EditBudget extends AppCompatActivity {
             public void onClick(View v) {
                 TextView txtclose;
                 Button submitBtnPop;
-                final String category = "Subscription";
+                final String category = "Savings";
                 myDialog.setContentView(R.layout.custompopup);
                 final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
                 final EditText amountET = myDialog.findViewById(R.id.amountEditText);

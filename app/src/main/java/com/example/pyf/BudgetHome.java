@@ -33,6 +33,8 @@ public class BudgetHome extends AppCompatActivity {
     float balanceMoney;
     float additionalMoney;
     float subscriptionMoney;
+    float savingsMoney;
+    float savingsBalanceMoney;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +50,13 @@ public class BudgetHome extends AppCompatActivity {
         ImageButton exportbtn = findViewById(R.id.btn_archive);
         ImageButton newbtn = findViewById(R.id.btn_New);
         ImageButton quickbtn = findViewById(R.id.btn_Quick);
+
+
         ImageButton breakdown = findViewById(R.id.btn_Breakdown);
 
         transaction = findViewById(R.id.transactionHistoryTextView);
+        transaction.setMovementMethod(new ScrollingMovementMethod());
+
         final TextView income = findViewById(R.id.incomeMoneyTextView);
         final TextView bills = findViewById(R.id.billsMoneyTextView);
         final TextView taxes = findViewById(R.id.taxesMoneyTextView);
@@ -60,13 +66,15 @@ public class BudgetHome extends AppCompatActivity {
         final TextView additional = findViewById(R.id.additionalMoneyTextView);
         final TextView subscription = findViewById(R.id.tv_SubscriptionMoney);
         final TextView savings = findViewById(R.id.tv_savingsMoney);
+        final TextView savingsBalance = findViewById(R.id.tv_SavingsBalanceMoney);
 
         myDialog = new Dialog(this);
 
 
         details = loadMethod.FileLoader(fileName, null , getApplicationContext());
 
-        overviewGenerate(income, bills, taxes, debts, leisure, balance, additional, subscription, savings);
+        overviewGenerate(income, bills, taxes, debts, leisure, balance, additional, subscription,
+                savings, savingsBalance);
 
 
         transaction.setMovementMethod(new ScrollingMovementMethod());
@@ -77,11 +85,44 @@ public class BudgetHome extends AppCompatActivity {
         editbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent budgetcreationIntent = new Intent(getApplicationContext(), EditBudget.class);
+                TextView close;
+                Button editFile;
+                Button deleteDetails;
+                myDialog.setContentView(R.layout.edit_pop_up);
+                close = myDialog.findViewById(R.id.editExit);
+                editFile = myDialog.findViewById(R.id.btn_editEdit);
+                deleteDetails = myDialog.findViewById(R.id.btn_delete);
 
-                budgetcreationIntent.putExtra("fileName", fileName);
-                startActivity(budgetcreationIntent);
-                //TODO File dump
+                close.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        myDialog.dismiss();
+                    }
+                });
+
+                editFile.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent budgetcreationIntent = new Intent(getApplicationContext(), EditBudget.class);
+                        saveMethod.saveFile(getApplicationContext(), fileName, null,
+                                details, false);
+                        budgetcreationIntent.putExtra("fileName", fileName);
+                        startActivity(budgetcreationIntent);
+                    }
+                });
+
+                deleteDetails.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent deleteIntent = new Intent(getApplicationContext(),
+                                DeleteEntries.class);
+                        saveMethod.saveFile(getApplicationContext(), fileName, null,
+                                details, false);
+                        deleteIntent.putExtra("fileName", fileName);
+                        startActivity(deleteIntent);
+                    }
+                });
+                myDialog.show();
             }
         });
 
@@ -161,7 +202,8 @@ public class BudgetHome extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         Intent newIntent = new Intent(getApplicationContext(), MainActivity.class);
-                        saveMethod.saveFile(getApplicationContext(), fileName, null, details, false);
+                        saveMethod.saveFile(getApplicationContext(), fileName, null,
+                                details, false);
                         startActivity(newIntent);
                     }
                 });
@@ -171,9 +213,11 @@ public class BudgetHome extends AppCompatActivity {
                     public void onClick(View v) {
                         dateCalculator dCalc = new dateCalculator();
                         RollOverCleaner cleaner = new RollOverCleaner();
-                        Intent rollBPIntent = new Intent(getApplicationContext(), BudgetPeriod.class);
+                        Intent rollBPIntent = new Intent(getApplicationContext(),
+                                BudgetPeriod.class);
                         Intent rollPPIntent = new Intent(getApplicationContext(), PayPeriod.class);
-                        saveMethod.saveFile(getApplicationContext(), fileName, null, details, false);
+                        saveMethod.saveFile(getApplicationContext(), fileName, null,
+                                details, false);
                         String[] dateparts = fileName.split("~");
                         if(dateparts[2].contains("BP")) {
                             String date1 = dateparts[0];
@@ -181,7 +225,8 @@ public class BudgetHome extends AppCompatActivity {
                             int dayDifference = dCalc.calculateDays(date1, date2);
                             Log.d("dayDifference", Integer.toString(dayDifference));
 
-                            String newEndDate = dCalc.calculateDate(dayDifference, date2).substring(0, 10);
+                            String newEndDate = dCalc.calculateDate(dayDifference,
+                                    date2).substring(0, 10);
                             Log.d("newEndDate", newEndDate);
 
                             rollBPIntent.putExtra("newEndDate", newEndDate);
@@ -227,7 +272,8 @@ public class BudgetHome extends AppCompatActivity {
 
                         final String category = "Leisure";
                         TextView close = myDialog.findViewById(R.id.spendExit);
-                        final EditText descriptionET = myDialog.findViewById(R.id.spendDescriptionEditText);
+                        final EditText descriptionET =
+                                myDialog.findViewById(R.id.spendDescriptionEditText);
                         final EditText amountET = myDialog.findViewById(R.id.spendAmountEditText);
                         Button submitBtn = myDialog.findViewById(R.id.spendSubmitBtnPop);
 
@@ -246,8 +292,10 @@ public class BudgetHome extends AppCompatActivity {
                                 String string = description + ": -£" + amount + "\n";
                                 transaction.append(string);
                                 details += category + "/" + description + "/" + amount + "\n";
-                                overviewGenerate(income, bills, taxes, debts, leisure, balance, additional, subscription, savings);
-                                saveMethod.saveFile(getApplicationContext(), fileName, null, details, false);
+                                overviewGenerate(income, bills, taxes, debts, leisure, balance,
+                                        additional, subscription, savings, savingsBalance);
+                                saveMethod.saveFile(getApplicationContext(), fileName,
+                                        null, details, false);
                                 myDialog.dismiss();
                             }
                     });
@@ -261,7 +309,8 @@ public class BudgetHome extends AppCompatActivity {
 
                         final String category = "Fund";
                         TextView close = myDialog.findViewById(R.id.fundsExit);
-                        final EditText descriptionET = myDialog.findViewById(R.id.fundsDescriptionEditText);
+                        final EditText descriptionET =
+                                myDialog.findViewById(R.id.fundsDescriptionEditText);
                         final EditText amountET = myDialog.findViewById(R.id.fundsAmountEditText);
                         Button submitBtn = myDialog.findViewById(R.id.fundsSubmitBtnPop);
 
@@ -280,8 +329,10 @@ public class BudgetHome extends AppCompatActivity {
                                 String string = description + ": +£" + amount + "\n";
                                 transaction.append(string);
                                 details += category + "/" + description + "/" + amount + "\n";
-                                overviewGenerate(income, bills, taxes, debts, leisure, balance, additional, subscription);
-                                saveMethod.saveFile(getApplicationContext(), fileName, null, details, false);
+                                overviewGenerate(income, bills, taxes, debts, leisure, balance,
+                                        additional, subscription, savings, savingsBalance);
+                                saveMethod.saveFile(getApplicationContext(), fileName,
+                                        null, details, false);
                                 myDialog.dismiss();
                             }
                         });
@@ -303,7 +354,9 @@ public class BudgetHome extends AppCompatActivity {
         });
     }
 
-    public void overviewGenerate(TextView income, TextView bills, TextView taxes, TextView debts, TextView leisure, TextView balance, TextView additional, TextView subscription, TextView Savings) {
+    public void overviewGenerate(TextView income, TextView bills, TextView taxes, TextView debts,
+                                 TextView leisure, TextView balance, TextView additional,
+                                 TextView subscription, TextView savings, TextView savingsBalance) {
 
         incomeMoney = 0;
         billsMoney = 0;
@@ -313,6 +366,8 @@ public class BudgetHome extends AppCompatActivity {
         leisureMoney = 0;
         additionalMoney = 0;
         subscriptionMoney = 0;
+        savingsMoney = 0;
+        savingsBalanceMoney = 0;
 
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(2);
@@ -322,6 +377,7 @@ public class BudgetHome extends AppCompatActivity {
         for(int i = 0; i <= detailsLength -1; i++) {
             String[] stringSplitter = detailsArr[i].split("/");
 
+            // If and else if structure to organise information from detailsArr array
             if (stringSplitter[0].contains("Income")) {
                 incomeMoney += Float.parseFloat(stringSplitter[2]);
             } else if (stringSplitter[0].contains("Bills")) {
@@ -340,6 +396,9 @@ public class BudgetHome extends AppCompatActivity {
             } else if (stringSplitter[0].contains("Subscription")) {
                 Log.d("stringSplit", stringSplitter[0]);
                 subscriptionMoney += Float.parseFloat(stringSplitter[2]);
+            } else if (stringSplitter[0].contains("Savings")) {
+                Log.d("stringSplit", stringSplitter[0]);
+                savingsMoney += Float.parseFloat(stringSplitter[2]);
             }
         }
 
@@ -351,6 +410,8 @@ public class BudgetHome extends AppCompatActivity {
         balance.setText("£");
         additional.setText("£");
         subscription.setText("£");
+        savings.setText("£");
+        savingsBalance.setText("£");
         income.append(String.format("%.2f", incomeMoney));
         bills.append(String.format("%.2f", billsMoney));
         taxes.append(String.format("%.2f", taxesMoney));
@@ -358,12 +419,17 @@ public class BudgetHome extends AppCompatActivity {
         leisure.append(String.format("%.2f", leisureMoney));
         additional.append(String.format("%.2f", additionalMoney));
         subscription.append(String.format("%.2f", subscriptionMoney));
-        balance.append(String.format("%.2f", ((incomeMoney + additionalMoney) - (billsMoney + taxesMoney + debtsMoney + leisureMoney + subscriptionMoney))));
+        savings.append(String.format("%.2f", savingsMoney));
+        balance.append(String.format("%.2f", ((incomeMoney + additionalMoney) - (billsMoney +
+                taxesMoney + debtsMoney + leisureMoney + subscriptionMoney + savingsMoney))));
+        savingsBalance.append(String.format("%.2f", (((incomeMoney + additionalMoney) -
+                (billsMoney + taxesMoney + debtsMoney + leisureMoney + subscriptionMoney)))));
     }
 
     public void onBackPressed() {
         SaveFile saveMethod = new SaveFile();
         saveMethod.saveFile(getApplicationContext(), fileName, null, details, false);
+
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
         finish();
     }

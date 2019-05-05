@@ -38,6 +38,7 @@ public class Report extends AppCompatActivity {
         TextView billsEntry = findViewById(R.id.tv_BillsEntries);
         TextView taxesEntry = findViewById(R.id.tv_TaxesEntries);
         TextView debtsEntry = findViewById(R.id.tv_DebtsEntries);
+        TextView savingsEntry = findViewById(R.id.tv_SavingsEntries);
 
         leisureEntry.append("");
         fundsEntry.append("");
@@ -63,6 +64,8 @@ public class Report extends AppCompatActivity {
         String[] fundValues = new String[detailsLength];
         String[] subscriptionDescriptions = new String[detailsLength];
         String[] subscriptionValues = new String[detailsLength];
+        String[] savingsDescriptions = new String[detailsLength];
+        String[] savingsValues = new String[detailsLength];
 
         float workSpace = 0;
         for(int i = 0; i <= detailsLength -1; i++) {
@@ -146,6 +149,17 @@ public class Report extends AppCompatActivity {
                     subscriptionDescriptions[i] = stringSplitter[1];
                     subscriptionValues[i] = stringSplitter[2];
                 }
+            } else if (stringSplitter[0].contains("Savings")) {
+                if (Arrays.asList(savingsDescriptions).contains(stringSplitter[1])) {
+                    workSpace = Float.parseFloat(savingsValues[Arrays.asList(savingsDescriptions).indexOf(stringSplitter[1])]) +
+                            Float.parseFloat(stringSplitter[2]);
+                    savingsValues[Arrays.asList(savingsDescriptions).indexOf(stringSplitter[1])] =
+                            Float.toString(workSpace);
+
+                } else {
+                    savingsDescriptions[i] = stringSplitter[1];
+                    savingsValues[i] = stringSplitter[2];
+                }
             }
         }
 
@@ -156,6 +170,7 @@ public class Report extends AppCompatActivity {
         fundsEntry.append(viewBuilder(fundDescriptions, fundValues));
         leisureEntry.append(viewBuilder(leisureDescriptions, leisureValues));
         subscriptionsEntry.append(viewBuilder(subscriptionDescriptions, subscriptionValues));
+        savingsEntry.append(viewBuilder(savingsDescriptions, savingsValues));
         if(pieChartGenerate) {
             pieConstructor(leisureDescriptions, leisureValues);
         }

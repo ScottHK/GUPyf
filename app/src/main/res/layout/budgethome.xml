@@ -9,47 +9,89 @@
     tools:context=".BudgetHome">
 
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/linearLayout5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
         app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/availableBalanceTextView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/ll_availableBalance"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/prompt"
-            android:shadowColor="#000"
-            android:shadowDx="5"
-            android:shadowDy="5"
-            android:shadowRadius="5"
-            android:text="@string/available_balance"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/balanceMoneyTextView"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/availableBalanceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/available_balance"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/balanceMoneyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="£"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_savingsBalance"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/prompt"
-            android:shadowColor="#000"
-            android:shadowDx="5"
-            android:shadowDy="5"
-            android:shadowRadius="5"
-            android:text="£"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/tv_SavingsBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="Balance &amp; Savings"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_SavingsBalanceMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="£"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -64,7 +106,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
@@ -79,6 +121,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
                 android:text="Savings"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
@@ -89,6 +135,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/prompt"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
                 android:text="£"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
@@ -465,8 +515,9 @@
 
     <TextView
         android:id="@+id/transactionHistoryTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
         android:elevation="3dp"
         android:fontFamily="@font/prompt"
         android:scrollbars="vertical"
@@ -478,13 +529,13 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/transactionHistoryImageView"
         app:layout_constraintEnd_toEndOf="@+id/transactionHistoryImageView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/transactionHistoryImageView"
         app:layout_constraintTop_toTopOf="@+id/transactionHistoryImageView" />
 
     <ImageView
         android:id="@+id/transactionHistoryImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_width="250dp"
+        android:layout_height="96dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/box_for_messages"
         app:layout_constraintBottom_toBottomOf="parent"
