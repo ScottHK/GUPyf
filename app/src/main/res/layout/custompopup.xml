@@ -45,15 +45,17 @@
 
         <EditText
             android:id="@+id/descriptionEditText"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:ems="10"
             android:fontFamily="@font/prompt"
+            android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:text=""
             android:textColor="@android:color/white"
-            android:importantForAutofill="no" tools:targetApi="o"/>
+            tools:targetApi="o" />
 
         <TextView
             android:id="@+id/amountTextView"
@@ -74,6 +76,7 @@
 
         <EditText
             android:id="@+id/amountEditText"
+            android:digits="1234567890."
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

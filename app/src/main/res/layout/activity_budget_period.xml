@@ -55,6 +55,7 @@
 
     <EditText
         android:id="@+id/startDatePlainText"
+        android:digits="/1234567890"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -75,6 +76,7 @@
 
     <EditText
         android:id="@+id/endDatePlainText"
+        android:digits="/1234567890"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

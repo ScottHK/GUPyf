@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Set elements to variables
-        Button newBudgetBtn = findViewById(R.id.newBudgetBtn);
-        Button openFile = findViewById(R.id.openFileBtn);
+        ImageButton newBudgetBtn = findViewById(R.id.newBudgetBtn);
+        ImageButton openFile = findViewById(R.id.openFileBtn);
 
 
         //Set on click listener

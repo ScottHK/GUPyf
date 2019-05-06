@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class SetBudget extends AppCompatActivity {
 
@@ -16,8 +17,8 @@ public class SetBudget extends AppCompatActivity {
         setContentView(R.layout.activity_set_budget);
 
         //Set elements to variables
-        Button datesBtn = findViewById(R.id.datesBtn);
-        Button payDayButton = findViewById(R.id.payDayBtn);
+        ImageButton datesBtn = findViewById(R.id.datesBtn);
+        ImageButton payDayButton = findViewById(R.id.payDayBtn);
 
         //Set on click listener
         datesBtn.setOnClickListener(new View.OnClickListener() {

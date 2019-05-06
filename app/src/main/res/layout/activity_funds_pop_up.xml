@@ -59,6 +59,7 @@
 
         <EditText
             android:id="@+id/fundsDescriptionEditText"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -88,6 +89,7 @@
 
         <EditText
             android:id="@+id/fundsAmountEditText"
+            android:digits="1234567890."
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

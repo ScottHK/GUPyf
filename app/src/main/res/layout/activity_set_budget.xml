@@ -8,6 +8,27 @@
     android:fadingEdge="none"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="60sp"
+        android:elevation="3dp"
+        android:gravity="center"
+        android:shadowColor="#000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:text="@string/pyf"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/background_light"
+        android:textSize="40sp"
+        app:fontFamily="@font/prompt_bold"
+        app:layout_constraintBottom_toBottomOf="@+id/titleBarImageView"
+        app:layout_constraintEnd_toEndOf="@+id/titleBarImageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/titleBarImageView"
+        app:layout_constraintTop_toTopOf="@+id/titleBarImageView" />
+
     <ImageView
         android:id="@+id/titleBarImageView"
         android:layout_width="0dp"
@@ -22,128 +43,11 @@
         app:srcCompat="@drawable/titlebar" />
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="60sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="@string/pyf"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@android:color/background_light"
-        android:textSize="40sp"
-        app:fontFamily="@font/prompt_bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/setDatesTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:elevation="3dp"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="@string/dates"
-        android:textColor="@android:color/white"
-        android:textSize="22sp"
-        app:fontFamily="@font/prompt"
-        app:layout_constraintBottom_toBottomOf="@+id/datesBtn"
-        app:layout_constraintEnd_toEndOf="@+id/datesBtn"
-        app:layout_constraintStart_toStartOf="@+id/datesBtn" />
-
-    <TextView
-        android:id="@+id/payDayTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:elevation="3dp"
-        android:shadowColor="#000"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowRadius="5"
-        android:text="@string/pay_day"
-        android:textColor="@android:color/white"
-        android:textSize="21sp"
-        app:fontFamily="@font/prompt"
-        app:layout_constraintBottom_toBottomOf="@+id/payDayBtn"
-        app:layout_constraintEnd_toEndOf="@+id/payDayBtn"
-        app:layout_constraintStart_toStartOf="@+id/payDayBtn" />
-
-    <Button
-        android:id="@+id/datesBtn"
-        android:layout_width="125sp"
-        android:layout_height="125sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
-        app:layout_constraintVertical_bias="0.20999998" />
-
-    <Button
-        android:id="@+id/payDayBtn"
-        android:layout_width="125sp"
-        android:layout_height="125sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/button_rounded"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.751"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/budgetTextView"
-        app:layout_constraintVertical_bias="0.20999998" />
-
-    <ImageView
-        android:id="@+id/datesImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="79sp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/open_file_icon"
-        android:elevation="3dp"
-        app:layout_constraintBottom_toTopOf="@+id/setDatesTextView"
-        app:layout_constraintEnd_toEndOf="@+id/datesBtn"
-        app:layout_constraintStart_toStartOf="@+id/datesBtn"
-        app:layout_constraintTop_toTopOf="@+id/datesBtn"
-        app:srcCompat="@drawable/ic_appointment" />
-
-    <ImageView
-        android:id="@+id/payDayImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="79sp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/open_file_icon"
-        android:elevation="3sp"
-        app:layout_constraintBottom_toTopOf="@+id/payDayTextView"
-        app:layout_constraintEnd_toEndOf="@+id/payDayBtn"
-        app:layout_constraintStart_toStartOf="@+id/payDayBtn"
-        app:layout_constraintTop_toTopOf="@+id/payDayBtn"
-        app:srcCompat="@drawable/ic_time_is_money" />
-
-    <TextView
         android:id="@+id/budgetTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/prompt_bold"
@@ -154,10 +58,88 @@
         android:text="@string/set_budget_by"
         android:textColor="@android:color/white"
         android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBarImageView" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/datesLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_rounded"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/datesBtn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_appointment"
+                android:paddingTop="5dp" />
+
+            <TextView
+                android:id="@+id/datesTextView"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_bold"
+                android:gravity="center"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/dates"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/payDayBtnLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_rounded"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/payDayBtn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_time_is_money"
+                android:paddingTop="5dp" />
+
+            <TextView
+                android:id="@+id/payDayTextView"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/prompt_bold"
+                android:gravity="center"
+                android:shadowColor="#000"
+                android:shadowDx="5"
+                android:shadowDy="5"
+                android:shadowRadius="5"
+                android:text="@string/pay_day"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
