@@ -231,6 +231,10 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/prompt_bold"
                     android:gravity="center"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
                     android:text="Savings"
                     android:textColor="#FFFFFF" />
 
@@ -242,7 +246,7 @@
 
     <ImageView
         android:id="@+id/titleBarImageView"
-        android:layout_width="416sp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:contentDescription="@string/bar_for_string_bar_for_title"

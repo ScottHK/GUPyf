@@ -10,7 +10,7 @@
 
     <ImageView
         android:id="@+id/titleBarImageView"
-        android:layout_width="416dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:contentDescription="@string/bar_for_string_bar_for_title"

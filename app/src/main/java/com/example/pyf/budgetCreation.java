@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class budgetCreation extends AppCompatActivity {
+    // Global Variables
     Dialog myDialog;
     TextView actionLog;
     String fileLog = "";
@@ -33,13 +34,14 @@ public class budgetCreation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_budget_creation);
-        fileName = getIntent().getStringExtra("date");
-        actionLog = findViewById(R.id.actionLogTextView);
-        actionLog.setMovementMethod(new ScrollingMovementMethod());
-        myDialog = new Dialog(this);
-        final SaveFile save = new SaveFile();
 
+        //Layout to be used
+        setContentView(R.layout.activity_budget_creation);
+
+        //Retrieve packed info
+        fileName = getIntent().getStringExtra("date");
+
+        //Set elements to variables
         Button donebtn = findViewById(R.id.doneBtn);
         ImageButton incomeDetails = findViewById(R.id.incomeBtn);
         ImageButton billsDetails = findViewById(R.id.billsBtn);
@@ -47,212 +49,353 @@ public class budgetCreation extends AppCompatActivity {
         ImageButton debtsDetails = findViewById(R.id.debtsBtn);
         ImageButton subscriptionDetails = findViewById(R.id.subscriptionBtn);
         ImageButton savingsDetails = findViewById(R.id.savingsBtn);
+        actionLog = findViewById(R.id.actionLogTextView);
 
+        //Set scrolling method on TextView
+        actionLog.setMovementMethod(new ScrollingMovementMethod());
 
+        //Set dialog variable
+        myDialog = new Dialog(this);
+
+        //Instantiate objects for method use later
+        final SaveFile save = new SaveFile();
+
+        //Setting on click listener
         incomeDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Variables
                 TextView txtclose;
                 Button submitBtnPop;
                 final String category = "Income";
-                myDialog.setContentView(R.layout.custompopup);
-                final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
-                final EditText amountET = myDialog.findViewById(R.id.amountEditText);
-                txtclose = (TextView) myDialog.findViewById(R.id.exit);
-                submitBtnPop = (Button) myDialog.findViewById(R.id.submitBtnPop);
-                txtclose.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        myDialog.dismiss();
-                    }
-                });
-                submitBtnPop.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String description = descriptionET.getText().toString();
-                        String amount = amountET.getText().toString();
-                        String string = category + ": " + description + " - £" + amount + "\n";
-                        actionLog.append(string);
-                        fileLog += category + "/" + description + "/" + amount + "\n";
-                        myDialog.dismiss();
-                    }
-                });
-                myDialog.show();
-            }
-        });
 
-
-        billsDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView txtclose;
-                Button submitBtnPop;
-                final String category = "Bills";
-                myDialog.setContentView(R.layout.custompopup);
-                final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
-                final EditText amountET = myDialog.findViewById(R.id.amountEditText);
-                txtclose = (TextView) myDialog.findViewById(R.id.exit);
-                submitBtnPop = (Button) myDialog.findViewById(R.id.submitBtnPop);
-                txtclose.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        myDialog.dismiss();
-                    }
-                });
-                submitBtnPop.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        String description = descriptionET.getText().toString();
-                        String amount = amountET.getText().toString();
-                        String string = category + ": " + description + " - £" + amount + "\n";
-                        actionLog.append(string);
-                        fileLog += category + "/" + description + "/" + amount + "\n";
-                        myDialog.dismiss();
-                    }
-                });
-                myDialog.show();
-            }
-        });
-
-        taxesDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                TextView txtclose;
-                Button submitBtnPop;
-                final String category = "Taxes";
+                //Set elements to variables
                 myDialog.setContentView(R.layout.custompopup);
                 final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
                 final EditText amountET = myDialog.findViewById(R.id.amountEditText);
                 txtclose = myDialog.findViewById(R.id.exit);
                 submitBtnPop = myDialog.findViewById(R.id.submitBtnPop);
 
+                //Setting on click listener
                 txtclose.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         myDialog.dismiss();
                     }
                 });
+
+                //Setting on click listener
                 submitBtnPop.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        //Variables
                         String description = descriptionET.getText().toString();
                         String amount = amountET.getText().toString();
                         String string = category + ": " + description + " - £" + amount + "\n";
+
+                        //Append string to actionLog TextView
                         actionLog.append(string);
+
+                        //Concatenate and add to fileLog
                         fileLog += category + "/" + description + "/" + amount + "\n";
+
+                        //Dismiss dialog box
                         myDialog.dismiss();
                     }
                 });
+
+                //Show Dialog box
                 myDialog.show();
             }
         });
 
+        //Setting on click listener
+        billsDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                //Variables
+                TextView txtclose;
+                Button submitBtnPop;
+                final String category = "Bills";
+
+                //Set layout
+                myDialog.setContentView(R.layout.custompopup);
+
+                //Set elements to variables
+                final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
+                final EditText amountET = myDialog.findViewById(R.id.amountEditText);
+                txtclose = myDialog.findViewById(R.id.exit);
+                submitBtnPop = myDialog.findViewById(R.id.submitBtnPop);
+
+                //Setting on click listener
+                txtclose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        myDialog.dismiss();
+                    }
+                });
+
+                //Setting on click listener
+                submitBtnPop.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        //Variables
+                        String description = descriptionET.getText().toString();
+                        String amount = amountET.getText().toString();
+                        String string = category + ": " + description + " - £" + amount + "\n";
+
+                        //Append string to actionLog TextView
+                        actionLog.append(string);
+
+                        //Concatenate and add to fileLog
+                        fileLog += category + "/" + description + "/" + amount + "\n";
+
+                        //Dismiss dialog box
+                        myDialog.dismiss();
+                    }
+                });
+
+                //Show Dialog box
+                myDialog.show();
+            }
+        });
+
+        //Setting on click listener
+        taxesDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Variables
+                TextView txtclose;
+                Button submitBtnPop;
+                final String category = "Taxes";
+
+                //Set layout
+                myDialog.setContentView(R.layout.custompopup);
+
+                //Set elements to variables
+                final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
+                final EditText amountET = myDialog.findViewById(R.id.amountEditText);
+                txtclose = myDialog.findViewById(R.id.exit);
+                submitBtnPop = myDialog.findViewById(R.id.submitBtnPop);
+
+                //Setting on click listener
+                txtclose.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        myDialog.dismiss();
+                    }
+                });
+
+                //Setting on click listener
+                submitBtnPop.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        //Variables
+                        String description = descriptionET.getText().toString();
+                        String amount = amountET.getText().toString();
+                        String string = category + ": " + description + " - £" + amount + "\n";
+
+                        //Append string to actionLog TextView
+                        actionLog.append(string);
+
+                        //Concatenate and add to fileLog
+                        fileLog += category + "/" + description + "/" + amount + "\n";
+
+                        //Dismiss dialog
+                        myDialog.dismiss();
+                    }
+                });
+
+                //Show dialog
+                myDialog.show();
+            }
+        });
+
+        //Setting on click listener
         debtsDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Variables
                 TextView txtclose;
                 Button submitBtnPop;
                 final String category = "Debts";
+
+                //Set layout
                 myDialog.setContentView(R.layout.custompopup);
+
+                //Set elements to variables
                 final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
                 final EditText amountET = myDialog.findViewById(R.id.amountEditText);
-                txtclose = (TextView) myDialog.findViewById(R.id.exit);
-                submitBtnPop = (Button) myDialog.findViewById(R.id.submitBtnPop);
+                txtclose = myDialog.findViewById(R.id.exit);
+                submitBtnPop = myDialog.findViewById(R.id.submitBtnPop);
+
+                //Setting on click listener
                 txtclose.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        //Dismiss dialog
                         myDialog.dismiss();
                     }
                 });
+
+                //Setting on click listener
                 submitBtnPop.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        //Variables
                         String description = descriptionET.getText().toString();
                         String amount = amountET.getText().toString();
                         String string = category + ": " + description + " - £" + amount + "\n";
+
+                        //Append string to actionLog TextView
                         actionLog.append(string);
+
+                        //Concatenate and add to fileLog
                         fileLog += category + "/" + description + "/" + amount + "\n";
+
+                        //Dismiss dialog
                         myDialog.dismiss();
                     }
                 });
+
+                //Show dialog
                 myDialog.show();
             }
         });
 
+        //Setting on click listener
         subscriptionDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Variables
                 TextView txtclose;
                 Button submitBtnPop;
                 final String category = "Subscription";
+
+                //Set layout
                 myDialog.setContentView(R.layout.custompopup);
+
+                //Set elements to variables
                 final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
                 final EditText amountET = myDialog.findViewById(R.id.amountEditText);
                 txtclose = (myDialog.findViewById(R.id.exit));
                 submitBtnPop = myDialog.findViewById(R.id.submitBtnPop);
+
+                //Setting on click listener
                 txtclose.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         myDialog.dismiss();
                     }
                 });
+
+                //Setting on click listener
                 submitBtnPop.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        //Variables
                         String description = descriptionET.getText().toString();
                         String amount = amountET.getText().toString();
                         String string = category + ": " + description + " - £" + amount + "\n";
+
+                        //Append string to actionLog TextView
                         actionLog.append(string);
+
+                        //Concatenate and add string to fileLog
                         fileLog += category + "/" + description + "/" + amount + "\n";
+
+                        //Dismiss dialog
                         myDialog.dismiss();
                     }
                 });
+
+                //Show dialog
                 myDialog.show();
             }
         });
 
+        //Setting on click listener
         savingsDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Variables
                 TextView txtclose;
                 Button submitBtnPop;
                 final String category = "Savings";
+
+                //Set layout
                 myDialog.setContentView(R.layout.custompopup);
+
+                //Set elements to variables
                 final EditText descriptionET = myDialog.findViewById(R.id.descriptionEditText);
                 final EditText amountET = myDialog.findViewById(R.id.amountEditText);
                 txtclose = (myDialog.findViewById(R.id.exit));
                 submitBtnPop = myDialog.findViewById(R.id.submitBtnPop);
+
+                //Setting on click listener
                 txtclose.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        //Dismiss dialog
                         myDialog.dismiss();
                     }
                 });
+
+                //Setting on click listener
                 submitBtnPop.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        //Variables
                         String description = descriptionET.getText().toString();
                         String amount = amountET.getText().toString();
                         String string = category + ": " + description + " - £" + amount + "\n";
+
+                        //Append string to actionLog TextView
                         actionLog.append(string);
+
+                        //Concatenate and add string to fileLog
                         fileLog += category + "/" + description + "/" + amount + "\n";
+
+                        //Dismiss dialog
                         myDialog.dismiss();
                     }
                 });
+
+                //Show dialog
                 myDialog.show();
             }
         });
 
+
+        //Setting on click listener
         donebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Instantiate Intent
                 Intent doneIntent = new Intent(getApplicationContext(), BudgetHome.class);
 
+                //Use save object method saveFile to write given string to file
                 save.saveFile(getApplicationContext(), fileName, null, fileLog, false);
 
+                //Add extra information to intent
                 doneIntent.putExtra("fileName", fileName);
+
+                //Start intent, starting a new activity
                 startActivity(doneIntent);
 
             }

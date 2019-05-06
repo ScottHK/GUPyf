@@ -11,24 +11,36 @@ public class SetBudget extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Set layout
         setContentView(R.layout.activity_set_budget);
 
-        Button datesBtn = (Button) findViewById(R.id.datesBtn);
+        //Set elements to variables
+        Button datesBtn = findViewById(R.id.datesBtn);
+        Button payDayButton = findViewById(R.id.payDayBtn);
+
+        //Set on click listener
         datesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Instantiate intent
                 Intent datesIntent = new Intent(getApplicationContext(), BudgetPeriod.class);
-                //pass information to another activity
+
+                //Execute intent
                 startActivity(datesIntent);
             }
         });
 
-        Button payDayButton = (Button) findViewById(R.id.payDayBtn);
+        //Set on click listener
         payDayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Instantiate intent
                 Intent payDayIntent = new Intent(getApplicationContext(), PayPeriod.class);
 
+                //Execute intent
                 startActivity(payDayIntent);
             }
         });

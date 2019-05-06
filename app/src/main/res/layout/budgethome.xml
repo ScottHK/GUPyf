@@ -28,6 +28,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
@@ -63,6 +64,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
@@ -114,10 +116,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:elevation="3dp"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_Savings"
+                android:id="@+id/leisureTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/prompt"
@@ -125,12 +128,12 @@
                 android:shadowDx="5"
                 android:shadowDy="5"
                 android:shadowRadius="5"
-                android:text="Savings"
+                android:text="Leisure"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_savingsMoney"
+                android:id="@+id/tv_leisureMoney"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -236,10 +239,11 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/leisureTextView"
+                android:id="@+id/tv_Savings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/prompt"
@@ -247,12 +251,12 @@
                 android:shadowDx="5"
                 android:shadowDy="5"
                 android:shadowRadius="5"
-                android:text="Leisure"
+                android:text="Savings"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_leisureMoney"
+                android:id="@+id/tv_savingsMoney"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"

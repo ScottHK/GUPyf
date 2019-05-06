@@ -11,23 +11,38 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Set layout
         setContentView(R.layout.activity_main);
 
-        Button newBudgetBtn = (Button) findViewById(R.id.newBudgetBtn);
+
+        //Set elements to variables
+        Button newBudgetBtn = findViewById(R.id.newBudgetBtn);
         Button openFile = findViewById(R.id.openFileBtn);
 
+
+        //Set on click listener
         openFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Instantiate intent
                 Intent openFileIntent = new Intent(getApplicationContext(), fileList.class);
+
+                //Execute intent
                 startActivity(openFileIntent);
             }
         });
+
+        //Set on click listener
         newBudgetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Instantiate intent
                 Intent startIntent = new Intent(getApplicationContext(), SetBudget.class);
-                //passing information to another activity
+
+                //Execute intent
                 startActivity(startIntent);
             }
         });
