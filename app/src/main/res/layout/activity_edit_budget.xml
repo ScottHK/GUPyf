@@ -43,6 +43,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/ic_hand"
+                    android:contentDescription="@string/image_for_income"
                     android:paddingTop="5dp" />
 
                 <TextView
@@ -75,6 +76,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/ic_bill"
+                    android:contentDescription="@string/image_for_bills"
                     android:paddingTop="5dp" />
 
                 <TextView
@@ -114,6 +116,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/ic_tax"
+                    android:contentDescription="@string/image_for_taxes"
                     android:paddingTop="5dp" />
 
                 <TextView
@@ -149,6 +152,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/ic_debt"
+                    android:contentDescription="@string/image_for_debts"
                     android:paddingTop="5dp" />
 
                 <TextView
@@ -187,6 +191,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/ic_premium"
+                    android:contentDescription="@string/image_for_subscription"
                     android:paddingTop="5dp" />
 
                 <TextView
@@ -202,7 +207,7 @@
                     android:shadowDx="5"
                     android:shadowDy="5"
                     android:shadowRadius="5"
-                    android:text="Subscription"
+                    android:text="@string/subscription"
                     android:textColor="#FFFFFF"
                     android:textSize="11sp" />
 
@@ -223,6 +228,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:background="@drawable/ic_piggy_bank"
+                    android:contentDescription="@string/image_for_savings"
                     android:paddingTop="5dp" />
 
                 <TextView
@@ -235,7 +241,7 @@
                     android:shadowDx="5"
                     android:shadowDy="5"
                     android:shadowRadius="5"
-                    android:text="Savings"
+                    android:text="@string/savings"
                     android:textColor="#FFFFFF" />
 
             </LinearLayout>

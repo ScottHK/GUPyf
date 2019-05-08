@@ -51,6 +51,10 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/prompt_bold"
                     android:gravity="center"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
                     android:text="@string/income"
                     android:textColor="#FFFFFF" />
 
@@ -79,6 +83,10 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/prompt_bold"
                     android:gravity="center"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
                     android:text="@string/bills"
                     android:textColor="#FFFFFF" />
 
@@ -117,6 +125,10 @@
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
                     android:paddingBottom="6dp"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
                     android:text="@string/taxes"
                     android:textColor="#FFFFFF" />
 
@@ -145,6 +157,10 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/prompt_bold"
                     android:gravity="center"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
                     android:text="@string/debts"
                     android:textColor="#FFFFFF" />
 
@@ -182,6 +198,10 @@
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp"
                     android:paddingBottom="6dp"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
                     android:text="Subscription"
                     android:textColor="#FFFFFF"
                     android:textSize="11sp" />
@@ -211,6 +231,10 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/prompt_bold"
                     android:gravity="center"
+                    android:shadowColor="#000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
                     android:text="Savings"
                     android:textColor="#FFFFFF" />
 

@@ -53,6 +53,13 @@
     <string name="spend">Spend</string>
     <string name="add_funds">Add Funds</string>
     <string name="back_button">Back Button</string>
+    <string name="back_arrow">Back arrow</string>
+    <string name="image_for_subscription">Image for subscription</string>
+    <string name="subscription">Subscription</string>
+    <string name="image_for_savings">image for savings</string>
+    <string name="savings">Savings</string>
+    <string name="export_to_device">Export to Device:</string>
+    <string name="bin_icon">Bin icon</string>
     <string-array name="frequency_arrays">
         <item>Please Choose...</item>
         <item>Weekly</item>

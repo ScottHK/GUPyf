@@ -172,22 +172,29 @@ public class PayPeriod extends AppCompatActivity implements AdapterView.OnItemSe
         //Instantiating object for method use
         dateCalculator dCalc = new dateCalculator();
 
-        //Control structure for setting string according to frequency selected
-        if(selected.equals("Weekly")) {
-            String newEndDate = dCalc.calculateDate(7, dateSet).substring(0,10);
-            dateSet = (dateSet + "~" + newEndDate + "~PP") + ".txt";
-            itemSelected = true;
-            Log.d("newEndDate", newEndDate);
-        } else if(selected.equals("Fortnightly")) {
-            String newEndDate = dCalc.calculateDate(14, dateSet).substring(0,10);
-            dateSet = (dateSet + "~" + newEndDate + "~PP") + ".txt";
-            itemSelected = true;
-            Log.d("newEndDate", newEndDate);
-        } else if(selected.equals("Monthly")) {
-            String newEndDate = dCalc.calculateDate(30, dateSet).substring(0,10);
-            dateSet = (dateSet + "~" + newEndDate + "~PP") + ".txt";
-            itemSelected = true;
-            Log.d("newEndDate", newEndDate);
+        if (dateSet != null) {
+            //Control structure for setting string according to frequency selected
+            if (selected.equals("Weekly")) {
+                String newEndDate = dCalc.calculateDate(7, dateSet).substring(0, 10);
+                dateSet = (dateSet + "~" + newEndDate + "~PP") + ".txt";
+                itemSelected = true;
+                Log.d("newEndDate", newEndDate);
+            } else if (selected.equals("Fortnightly")) {
+                String newEndDate = dCalc.calculateDate(14, dateSet).substring(0, 10);
+                dateSet = (dateSet + "~" + newEndDate + "~PP") + ".txt";
+                itemSelected = true;
+                Log.d("newEndDate", newEndDate);
+            } else if (selected.equals("Monthly")) {
+                String newEndDate = dCalc.calculateDate(30, dateSet).substring(0, 10);
+                dateSet = (dateSet + "~" + newEndDate + "~PP") + ".txt";
+                itemSelected = true;
+                Log.d("newEndDate", newEndDate);
+            }
+        } else if(!selected.equals("Please Choose...")) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Please enter a last payment date" +
+                    "before setting a frequency", Toast.LENGTH_LONG);
+            toast.show();
+            spinner.setSelection(0);
         }
     }
 

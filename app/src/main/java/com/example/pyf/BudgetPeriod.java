@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -40,6 +41,9 @@ public class BudgetPeriod extends AppCompatActivity {
         //Set elements to variables
         mStartDate = findViewById(R.id.startDatePlainText);
         mEndDate = findViewById(R.id.endDatePlainText);
+
+        //Instantiate Object for method use
+        final dateCalculator dateCheck = new dateCalculator();
 
 
         //Check to see if BudgetPeriod was called on with an already made file or if it's a new file
@@ -129,7 +133,6 @@ public class BudgetPeriod extends AppCompatActivity {
         mEndDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
                 //Variables
                 month = month + 1;
                 String monthString = (month<10?"0" : "") + month;
@@ -139,8 +142,19 @@ public class BudgetPeriod extends AppCompatActivity {
                 String date = dayOfMonthString + "/" + monthString + "/" + year;
                 dateEnd = dayOfMonthString + "-" + monthString + "-" + year;
 
-                //Set text to textview
-                mEndDate.setText(date);
+                //Check variable to check for start date higher than end
+                int check = dateCheck.calculateDays(dateSet, dateEnd);
+
+                //Control structure to check if end date is lower than start date
+                if(check <= 0){
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Start Date must be higher than or equal to End Date", Toast.LENGTH_LONG);
+                    toast.show();
+                } else {
+
+                    //Set text to textview
+                    mEndDate.setText(date);
+                }
             }
         };
 

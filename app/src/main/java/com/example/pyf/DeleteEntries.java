@@ -43,7 +43,7 @@ public class DeleteEntries extends AppCompatActivity {
         details = loadMethod.FileLoader(fileName, null , getApplicationContext());
 
         //Replace string/regex in string with replacement value
-        details = details.replaceAll("/", " ");
+        details = details.replaceAll("/", "-");
 
         //Split string in to arrays for array variable
         String[] array = details.split("\n");
@@ -78,7 +78,7 @@ public class DeleteEntries extends AppCompatActivity {
                 //For loop to clean details, prevents leaving without ensuring item is deleted
                 for(int i = 0; i < lst.size(); i++) {
                     workspace = lst.get(i);
-                    workspace = workspace.replaceAll("\\s+", "/");
+                    workspace = workspace.replaceAll("-", "/");
                     clearedDetails += workspace + "\n";
                     Log.d("clearedDetails", clearedDetails);
                 }
